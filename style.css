@@ -1,0 +1,696 @@
+/*
+Theme Name: NemesisNet
+Theme URI: https://nemesisnet.co.za
+Author: NemesisNet Team
+Author URI: https://nemesisnet.co.za
+Description: A custom WordPress theme based on the NemesisNet Brand Guide.
+Version: 1.7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: nemesisnet
+Tags: dark, blue, custom-colors, custom-menu, featured-images
+*/
+
+:root {
+    --nemesis-blue: #1E88E5;
+    --nemesis-blue-bright: #2979FF;
+    --nemesis-blue-deep: #0f4c81;
+    --aurora-base: #00C2A8;
+    --aurora-flare: #33D6B7;
+    --aurora-ember: #008B6A;
+    --aurora-glow: rgba(0, 194, 168, 0.12);
+    --accent-color: var(--nemesis-blue);
+    --accent-hover: var(--nemesis-blue-bright);
+    --accent-glow: rgba(41, 121, 255, 0.14);
+    --nemesis-black: #0a0e27;
+    --nemesis-white: #F4F4F4;
+    --text-color: var(--nemesis-white);
+    --text-muted: rgba(244, 244, 244, 0.65);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --ui-radius: 12px;
+    --space-xs: 6px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --content-width: 1080px;
+    --page-background: #0a0e27;
+    --page-glow: radial-gradient(circle at 20% 20%, rgba(41, 121, 255, 0.28) 0%, transparent 42%), radial-gradient(circle at 80% 10%, rgba(0, 194, 168, 0.22) 0%, transparent 45%), radial-gradient(circle at 60% 80%, rgba(41, 121, 255, 0.18) 0%, transparent 55%);
+}
+
+html[data-theme="light"] {
+    --text-color: var(--nemesis-black);
+    --text-muted: rgba(26, 26, 26, 0.6);
+    --glass-bg: rgba(255, 255, 255, 0.96);
+    --glass-border: rgba(10, 14, 39, 0.06);
+    --page-background: linear-gradient(180deg, #f8fbff 0%, #f0f6ff 50%, #eaf2ff 100%);
+    --page-glow: radial-gradient(circle at 20% 15%, rgba(41, 121, 255, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 85%, rgba(0, 194, 168, 0.06) 0%, transparent 50%);
+    --accent-color: var(--nemesis-blue);
+    --accent-hover: var(--nemesis-blue-bright);
+}
+
+html[data-theme="light"] body {
+    background: var(--page-background);
+    background-image: var(--page-glow);
+    color: var(--nemesis-black);
+}
+
+html[data-theme="light"] .entry-content {
+    color: rgba(10, 14, 39, 0.85);
+}
+
+html[data-theme="light"] .site-title a {
+    color: var(--nemesis-black);
+}
+
+html[data-theme="light"] .main-navigation a {
+    color: var(--nemesis-black);
+}
+
+html[data-theme="light"] .site-header {
+    background: rgba(255, 255, 255, 0.65);
+    border-bottom: 1px solid rgba(41, 121, 255, 0.12);
+    box-shadow: 0 8px 26px rgba(15, 35, 65, 0.14);
+}
+
+html[data-theme="light"] .site-footer {
+    background: rgba(255, 255, 255, 0.65);
+    border-top: 1px solid rgba(41, 121, 255, 0.12);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--page-background);
+    background-image: var(--page-glow);
+    background-repeat: no-repeat;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+.container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 16px 42px rgba(5, 9, 24, 0.32);
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    padding: 12px 0;
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.custom-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(41, 121, 255, 0.1), rgba(0, 194, 168, 0.08));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-logo-link:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(41, 121, 255, 0.15), rgba(0, 194, 168, 0.12));
+    border-color: rgba(41, 121, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(41, 121, 255, 0.2);
+}
+
+.custom-logo {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50%;
+    object-fit: contain;
+    display: block;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.site-title a {
+    color: var(--text-color);
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.main-navigation ul {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    margin: 0;
+}
+
+.main-navigation a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.main-navigation a:hover {
+    background: var(--glass-bg);
+    color: var(--accent-hover);
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--ui-radius);
+    border: 1px solid var(--glass-border);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--glass-bg);
+    color: var(--accent-hover);
+}
+
+.theme-toggle.is-light {
+    background: var(--accent-color);
+    color: #031226;
+}
+
+.theme-toggle.is-light i {
+    transform: rotate(-30deg);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--ui-radius);
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle-icon {
+    width: 100%;
+    height: 2px;
+    background: var(--text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: var(--glass-bg);
+}
+
+.menu-toggle.is-active .menu-toggle-icon:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.is-active .menu-toggle-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .menu-toggle-icon:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.site-content {
+    padding: var(--space-xl) 0;
+    flex: 1;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+    background: linear-gradient(130deg, #f9fbff 0%, var(--accent-hover) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.post {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 20px 40px rgba(4, 9, 24, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-2px);
+}
+
+.entry-title {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.entry-title a {
+    color: var(--text-color);
+}
+
+.entry-title a:hover {
+    color: var(--accent-hover);
+}
+
+.entry-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+    display: flex;
+    gap: 10px;
+}
+
+/* ========================================
+   TAXONOMY PILLS (Categories & Tags)
+   ======================================== */
+
+.entry-taxonomies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.taxonomy-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.taxonomy-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid;
+}
+
+/* Category Pills - Nemesis Blue */
+.category-pill {
+    background: rgba(41, 121, 255, 0.15);
+    border-color: rgba(41, 121, 255, 0.3);
+    color: var(--nemesis-blue-bright);
+}
+
+.category-pill:hover {
+    background: rgba(41, 121, 255, 0.25);
+    border-color: var(--nemesis-blue-bright);
+    color: var(--nemesis-blue-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(41, 121, 255, 0.3);
+}
+
+/* Tag Pills - Aurora Green */
+.tag-pill {
+    background: rgba(0, 194, 168, 0.15);
+    border-color: rgba(0, 194, 168, 0.3);
+    color: var(--aurora-flare);
+}
+
+.tag-pill:hover {
+    background: rgba(0, 194, 168, 0.25);
+    border-color: var(--aurora-flare);
+    color: var(--aurora-flare);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 194, 168, 0.3);
+}
+
+.taxonomy-pill i {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.entry-content {
+    margin-bottom: var(--space-md);
+    color: rgba(244, 244, 244, 0.85);
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--ui-radius);
+    font-weight: 600;
+    background: rgba(41, 121, 255, 0.2);
+    border: 1px solid rgba(41, 121, 255, 0.35);
+    color: var(--text-color);
+    box-shadow: 0 18px 42px var(--accent-glow);
+    transition: all 0.25s ease;
+}
+
+.read-more:hover {
+    background: var(--accent-hover);
+    color: #041021;
+    transform: translateY(-2px);
+}
+
+.site-footer {
+    background: var(--glass-bg);
+    border-top: 1px solid var(--glass-border);
+    padding: var(--space-lg) 0;
+    margin-top: auto;
+    text-align: center;
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+.site-footer .footer-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.site-footer .footer-divider {
+    opacity: 0.5;
+}
+
+.site-footer a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.site-footer a:hover {
+    color: var(--accent-hover);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--nemesis-blue) 0%, var(--aurora-base) 100%);
+    color: #0a0e27;
+    border-radius: var(--ui-radius);
+    padding: 10px 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* ========================================
+   RESPONSIVE IMAGE STYLES
+   ======================================== */
+
+/* Base responsive image rules */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Content images with styling */
+.entry-content img,
+.post img,
+.page img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--ui-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entry-content img:hover,
+.post img:hover,
+.page img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(41, 121, 255, 0.2);
+}
+
+/* WordPress Image Alignment */
+.aligncenter {
+    display: block;
+    margin: 0 auto var(--space-md);
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 var(--space-md) var(--space-md);
+}
+
+.alignleft {
+    float: left;
+    margin: 0 var(--space-md) var(--space-md) 0;
+}
+
+.aligncenter img,
+.alignright img,
+.alignleft img {
+    margin-bottom: 0;
+}
+
+/* WordPress Image Captions */
+.wp-caption {
+    max-width: 100%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--ui-radius);
+    padding: 8px;
+    margin-bottom: var(--space-md);
+}
+
+.wp-caption img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.wp-caption-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* WordPress Galleries */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--ui-radius);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* Featured Images */
+.post-thumbnail {
+    margin-bottom: var(--space-md);
+    border-radius: var(--ui-radius);
+    overflow: hidden;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Image Sizes */
+.size-thumbnail,
+.size-medium,
+.size-large,
+.size-full {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================
+   RESPONSIVE MEDIA QUERIES
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .site-header .container {
+        position: relative;
+    }
+
+    .site-branding {
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+
+    .main-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--glass-bg);
+        backdrop-filter: blur(18px) saturate(120%);
+        -webkit-backdrop-filter: blur(18px) saturate(120%);
+        border-bottom: 1px solid var(--glass-border);
+        z-index: 999;
+    }
+
+    .main-navigation.is-open {
+        max-height: 500px;
+        padding: var(--space-md) 0;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-sm);
+    }
+
+    .main-navigation a {
+        display: block;
+        text-align: center;
+        padding: var(--space-sm);
+    }
+
+    .theme-toggle {
+        margin-left: 0;
+        margin-top: var(--space-sm);
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .post {
+        padding: var(--space-md);
+    }
+
+    .container {
+        padding: 0 var(--space-sm);
+    }
+
+    /* Responsive image adjustments for mobile */
+    .alignright,
+    .alignleft {
+        float: none;
+        margin: 0 auto var(--space-md);
+        display: block;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: var(--space-sm);
+    }
+
+    /* Taxonomy pills wrap better on mobile */
+    .entry-taxonomies {
+        gap: 8px;
+    }
+
+    .taxonomy-pill {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
+}
