@@ -12,6 +12,7 @@ A custom WordPress theme based on the NemesisNet Brand Guide, featuring a modern
 - 🎯 **Custom Logo Support**: Upload your own logo via WordPress Customizer
 - ⚡ **Performance Optimized**: Lightweight and fast-loading
 - 🌓 **Theme Toggle**: Switch between dark and light modes
+- 🧩 **Reusable Components**: Includes cards, buttons, hero links, and more
 
 ## Installation
 
@@ -51,8 +52,23 @@ The theme uses CSS custom properties for easy customization:
 --aurora-flare: #33D6B7;
 ```
 
+## Components
+
+### Included Components
+
+- **Glassmorphic Cards**: Stylish cards with gradient backgrounds and soft shadows.
+- **Buttons**: Primary, ghost, and Aurora-themed buttons.
+- **Hero Links**: Styled navigation links for CTAs.
+- **Pills & Tags**: Rounded elements for categories and highlights.
+- **Footer**: Dynamic footer with year and attribution.
+
+### Demo File
+
+Check `components-demo.php` for examples of all reusable components.
+
 ## Version History
 
+- **1.8.0** - Added reusable components and demo file
 - **1.7.0** - Added category/tag pills and responsive image support
 - **1.6.0** - Enhanced responsive image handling
 - **1.5.0** - Initial release with core features
@@ -60,13 +76,6 @@ The theme uses CSS custom properties for easy customization:
 ## Support
 
 For issues or questions, please visit the [GitHub repository](https://github.com/NemesisGuy/NemesisNet-WordPress-Theme).
-
-## License
-
-GNU General Public License v2 or later
-- PHP 7.4 or higher
-
-## Development
 
 ## License
 
