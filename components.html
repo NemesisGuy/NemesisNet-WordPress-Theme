@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NemesisNet Component Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: var(--accent-color);
+            border-left: 4px solid var(--aurora-base);
+            padding-left: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="margin-bottom: 60px; text-align: center;">
+        <h1 class="page-title">NemesisNet Components</h1>
+        <p style="color: var(--text-muted);">Local development preview for theme components</p>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <div class="container">
+
+        <!-- Typography -->
+        <section>
+            <h2>Typography</h2>
+            <div class="glass-section">
+                <h1>Heading Level 1</h1>
+                <h2>Heading Level 2</h2>
+                <h3>Heading Level 3</h3>
+                <h4>Heading Level 4</h4>
+                <p>This is a standard paragraph. The NemesisNet brand uses <strong>Inter</strong> for all typography. It
+                    provides a clean, modern, and highly readable typeface for UI and content.</p>
+                <p><a href="#">This is a text link</a> inside a paragraph.</p>
+                <p class="entry-meta">Meta text style (Date, Author, etc.)</p>
+            </div>
+        </section>
+
+        <!-- Colors -->
+        <section>
+            <h2>Brand Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--nemesis-blue);"></div>
+                    <code>--nemesis-blue</code>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--nemesis-blue-bright);"></div>
+                    <code>--nemesis-blue-bright</code>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--aurora-base);"></div>
+                    <code>--aurora-base</code>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--aurora-flare);"></div>
+                    <code>--aurora-flare</code>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--nemesis-black);"></div>
+                    <code>--nemesis-black</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section>
+            <h2>Buttons</h2>
+            <div class="glass-section">
+                <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                    <button class="btn-primary">Primary Button</button>
+                    <button class="btn-ghost">Ghost Button</button>
+                    <button class="btn-aurora">Aurora Button</button>
+                    <a href="#" class="read-more">Read More Link</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Links -->
+        <section>
+            <h2>Hero Links</h2>
+            <p>Consistent sizing and spacing for hero actions.</p>
+            <div class="glass-section">
+                <div class="hero-links">
+                    <a href="#" class="btn-primary">Our Work</a>
+                    <a href="#" class="btn-ghost">About Us</a>
+                    <a href="#" class="btn-ghost">Contact</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Taxonomy Pills -->
+        <section>
+            <h2>Taxonomy Pills</h2>
+            <div class="glass-section">
+                <div class="entry-taxonomies">
+                    <div class="taxonomy-group">
+                        <a href="#" class="taxonomy-pill category-pill">
+                            <i class="fas fa-folder"></i> Technology
+                        </a>
+                        <a href="#" class="taxonomy-pill category-pill">
+                            <i class="fas fa-folder"></i> Web Development
+                        </a>
+                    </div>
+                    <div class="taxonomy-group">
+                        <a href="#" class="taxonomy-pill tag-pill">
+                            <i class="fas fa-tag"></i> WordPress
+                        </a>
+                        <a href="#" class="taxonomy-pill tag-pill">
+                            <i class="fas fa-tag"></i> PHP
+                        </a>
+                        <a href="#" class="taxonomy-pill tag-pill">
+                            <i class="fas fa-tag"></i> CSS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Elements -->
+        <section>
+            <h2>Form Elements</h2>
+            <div class="glass-section">
+                <div class="form-group">
+                    <label for="text-input">Text Input</label>
+                    <input type="text" id="text-input" placeholder="Enter text here...">
+                </div>
+
+                <div class="form-group">
+                    <label for="email-input">Email Input</label>
+                    <input type="email" id="email-input" placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password-input">Password Input</label>
+                    <input type="password" id="password-input" placeholder="Enter password">
+                </div>
+
+                <div class="form-group">
+                    <label for="textarea">Textarea</label>
+                    <textarea id="textarea" placeholder="Enter your message..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="select">Select Dropdown</label>
+                    <select id="select">
+                        <option value="">Choose an option...</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Checkboxes</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Option 1</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="check2" checked>
+                        <label for="check2">Option 2 (Pre-checked)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Option 3</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Radio Buttons</label>
+                    <div class="radio-group">
+                        <input type="radio" id="radio1" name="radio-group" checked>
+                        <label for="radio1">Option A (Selected)</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="radio2" name="radio-group">
+                        <label for="radio2">Option B</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="radio3" name="radio-group">
+                        <label for="radio3">Option C</label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <button class="btn-primary">Submit Form</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Navigation Example -->
+        <section>
+            <h2>Mobile Navigation</h2>
+            <p>Mobile menu appears on screens smaller than 768px. Click the hamburger icon in the header to test.</p>
+            <div class="glass-section">
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <p style="margin-top: var(--space-md); color: var(--text-muted);">
+                    The mobile menu overlay is triggered by the hamburger button in the header on mobile devices.
+                </p>
+            </div>
+        </section>
+
+        <!-- Breadcrumbs -->
+        <section>
+            <h2>Breadcrumbs</h2>
+            <div class="glass-section">
+                <nav class="breadcrumbs">
+                    <div class="breadcrumb-item">
+                        <a href="#"><i class="fas fa-home"></i> Home</a>
+                    </div>
+                    <span class="breadcrumb-separator">/</span>
+                    <div class="breadcrumb-item">
+                        <a href="#">Blog</a>
+                    </div>
+                    <span class="breadcrumb-separator">/</span>
+                    <div class="breadcrumb-item">
+                        <a href="#">Technology</a>
+                    </div>
+                    <span class="breadcrumb-separator">/</span>
+                    <div class="breadcrumb-item active">
+                        Current Page
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <section>
+            <h2>Pagination</h2>
+            <div class="glass-section">
+                <nav class="pagination">
+                    <a href="#" class="page-numbers"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="page-numbers">1</a>
+                    <span class="page-numbers current">2</span>
+                    <a href="#" class="page-numbers">3</a>
+                    <a href="#" class="page-numbers">4</a>
+                    <span class="page-numbers dots">...</span>
+                    <a href="#" class="page-numbers">10</a>
+                    <a href="#" class="page-numbers"><i class="fas fa-chevron-right"></i></a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Post Navigation -->
+        <section>
+            <h2>Post Navigation</h2>
+            <div class="glass-section">
+                <nav class="post-navigation">
+                    <a href="#" class="nav-previous">
+                        <span class="nav-label"><i class="fas fa-arrow-left"></i> Previous</span>
+                        <span class="nav-title">Getting Started with WordPress</span>
+                    </a>
+                    <a href="#" class="nav-next">
+                        <span class="nav-label">Next <i class="fas fa-arrow-right"></i></span>
+                        <span class="nav-title">Advanced Theme Development</span>
+                    </a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Single Post Example -->
+        <section>
+            <h2>Single Post Layout</h2>
+            <div class="glass-section">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <h1 class="post-title">Building a Modern WordPress Theme</h1>
+                    <div class="post-meta">
+                        <span class="post-meta-item">
+                            <i class="fas fa-calendar"></i> November 28, 2025
+                        </span>
+                        <span class="post-meta-item">
+                            <i class="fas fa-user"></i> Reign
+                        </span>
+                        <span class="post-meta-item">
+                            <i class="fas fa-clock"></i> 5 min read
+                        </span>
+                    </div>
+                </header>
+
+                <!-- Featured Image -->
+                <div class="featured-image">
+                    <img src="screenshot.png" alt="Featured Image">
+                </div>
+
+                <!-- Post Content -->
+                <div class="post-content">
+                    <p>This is an example of a single post layout. The content area uses larger font sizes and increased
+                        line height for better readability.</p>
+                    <h2>Section Heading</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>List item one</li>
+                        <li>List item two</li>
+                        <li>List item three</li>
+                    </ul>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="author-bio">
+                    <div class="author-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Reign&background=2979FF&color=fff&size=80"
+                            alt="Author">
+                    </div>
+                    <div class="author-info">
+                        <h3 class="author-name">Reign</h3>
+                        <p class="author-description">Full-stack developer and WordPress enthusiast. Passionate about
+                            creating beautiful, functional websites with modern technologies.</p>
+                        <div class="author-social">
+                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h3 class="related-posts-title">Related Posts</h3>
+                    <div class="related-posts-grid">
+                        <article class="related-post-card">
+                            <img src="screenshot.png" alt="Related Post" class="related-post-image">
+                            <div class="related-post-content">
+                                <h4 class="related-post-title">WordPress Theme Development Basics</h4>
+                                <p class="related-post-excerpt">Learn the fundamentals of creating custom WordPress
+                                    themes from scratch.</p>
+                            </div>
+                        </article>
+                        <article class="related-post-card">
+                            <img src="screenshot.png" alt="Related Post" class="related-post-image">
+                            <div class="related-post-content">
+                                <h4 class="related-post-title">Advanced CSS Techniques</h4>
+                                <p class="related-post-excerpt">Explore modern CSS features like Grid, Flexbox, and
+                                    custom properties.</p>
+                            </div>
+                        </article>
+                        <article class="related-post-card">
+                            <img src="screenshot.png" alt="Related Post" class="related-post-image">
+                            <div class="related-post-content">
+                                <h4 class="related-post-title">Responsive Design Patterns</h4>
+                                <p class="related-post-excerpt">Master mobile-first design with practical examples and
+                                    best practices.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section>
+            <h2>Cards</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <!-- Standard Post Card -->
+                <article class="post">
+                    <header class="entry-header">
+                        <h2 class="entry-title"><a href="#">Standard Post Card</a></h2>
+                        <div class="entry-meta">November 28, 2025 by Reign</div>
+                    </header>
+                    <div class="entry-content">
+                        <p>This is a standard blog post card. It uses the default glassmorphic style defined in the
+                            theme.</p>
+                    </div>
+                    <footer class="entry-footer">
+                        <a href="#" class="read-more">Read Article</a>
+                    </footer>
+                </article>
+
+                <!-- Project Card (Feature Image) -->
+                <div class="project-card card-feature">
+                    <img src="screenshot.png" alt="Project Preview" class="card-feature-image">
+                    <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                        <header class="entry-header">
+                            <h2 class="entry-title">Feature Image Card</h2>
+                            <div class="entry-taxonomies" style="margin-bottom: 10px;">
+                                <span class="taxonomy-pill category-pill"><i class="fas fa-folder"></i> Design</span>
+                            </div>
+                        </header>
+                        <div class="entry-content">
+                            <p>A card variant with a prominent feature image at the top. Great for portfolio items or
+                                featured posts.</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn-primary">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Section Card -->
+                <div class="project-card card-icon">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <header class="entry-header">
+                        <h2 class="entry-title">Icon Feature Card</h2>
+                    </header>
+                    <div class="entry-content">
+                        <p>Perfect for services or feature highlights. Centers content and emphasizes a specific icon.
+                        </p>
+                    </div>
+                    <div class="card-actions" style="justify-content: center;">
+                        <a href="#" class="btn-ghost">Learn More</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Simple theme toggle for preview
+        const toggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const icon = toggle.querySelector('i');
+
+        toggle.addEventListener('click', () => {
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                toggle.classList.add('is-light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                toggle.classList.remove('is-light');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@ Theme URI: https://nemesisnet.co.za
 Author: NemesisNet Team
 Author URI: https://nemesisnet.co.za
 Description: A custom WordPress theme based on the NemesisNet Brand Guide.
-Version: 1.9.0
+Version: 1.8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: nemesisnet
@@ -927,223 +927,6 @@ input[type="radio"] {
     flex-wrap: wrap;
 }
 
-/* Hero Blocks */
-.hero {
-    position: relative;
-    padding: var(--space-xl) 0;
-    text-align: center;
-    overflow: hidden;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 var(--space-md);
-}
-
-.hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.1;
-    margin-bottom: var(--space-md);
-    background: linear-gradient(130deg, #f9fbff 0%, var(--accent-hover) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-    color: var(--text-muted);
-    margin-bottom: var(--space-lg);
-    line-height: 1.6;
-}
-
-.hero-cta {
-    display: flex;
-    gap: var(--space-md);
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.hero-background {
-    position: relative;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.hero-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(10, 14, 39, 0.85) 0%, rgba(10, 14, 39, 0.7) 100%);
-    z-index: 1;
-}
-
-html[data-theme="light"] .hero-background::before {
-    background: linear-gradient(135deg, rgba(240, 244, 248, 0.9) 0%, rgba(226, 232, 240, 0.85) 100%);
-}
-
-.hero-background .hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Feature Sections */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-lg);
-    margin: var(--space-xl) 0;
-}
-
-.feature-item {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: var(--space-lg);
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 48px rgba(4, 9, 24, 0.2);
-}
-
-.feature-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto var(--space-md);
-    background: linear-gradient(135deg, var(--nemesis-blue) 0%, var(--aurora-base) 100%);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: var(--nemesis-black);
-}
-
-.feature-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: var(--space-sm);
-    color: var(--text-color);
-}
-
-.feature-description {
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* Feature List */
-.features-list {
-    display: grid;
-    gap: var(--space-md);
-}
-
-.feature-list-item {
-    display: flex;
-    gap: var(--space-md);
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: var(--space-md);
-    transition: all 0.2s ease;
-}
-
-.feature-list-item:hover {
-    transform: translateX(8px);
-    border-color: var(--accent-color);
-}
-
-.feature-list-icon {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    background: rgba(41, 121, 255, 0.1);
-    border: 1px solid rgba(41, 121, 255, 0.3);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: var(--accent-color);
-}
-
-.feature-list-content {
-    flex: 1;
-}
-
-.feature-list-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: var(--space-xs);
-    color: var(--text-color);
-}
-
-.feature-list-description {
-    color: var(--text-muted);
-    line-height: 1.5;
-    font-size: 0.95rem;
-}
-
-/* Stats Section */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-lg);
-    margin: var(--space-xl) 0;
-}
-
-.stat-item {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: var(--space-lg);
-    text-align: center;
-    transition: all 0.2s ease;
-}
-
-.stat-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 48px rgba(4, 9, 24, 0.2);
-    border-color: var(--accent-color);
-}
-
-.stat-number {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    background: linear-gradient(130deg, var(--accent-color) 0%, var(--aurora-base) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--space-xs);
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 1rem;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
 /* Glass Section */
 .glass-section {
     background: var(--glass-bg);
@@ -1186,81 +969,49 @@ html[data-theme="light"] .glass-section {
     margin: 0 0 var(--space-md) var(--space-md);
 }
 
-.alignleft {
-    float: left;
-    margin: 0 var(--space-md) var(--space-md) 0;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--ui-radius);
+.mobile-menu-toggle {
+    display: flex;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .site-header .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+.main-navigation {
+    display: none;
+}
 
-    .mobile-menu-toggle {
-        display: flex;
-    }
+.post-navigation {
+    grid-template-columns: 1fr;
+}
 
-    .main-navigation {
-        display: none;
-    }
+.nav-next {
+    text-align: left;
+}
 
-    .post-navigation {
-        grid-template-columns: 1fr;
-    }
+.post-title {
+    font-size: 1.8rem;
+}
 
-    .nav-next {
-        text-align: left;
-    }
+.author-bio {
+    flex-direction: column;
+    text-align: center;
+}
 
-    .post-title {
-        font-size: 1.8rem;
-    }
+.author-avatar {
+    align-self: center;
+}
 
-    .author-bio {
-        flex-direction: column;
-        text-align: center;
-    }
+.author-social {
+    justify-content: center;
+}
 
-    .author-avatar {
-        align-self: center;
-    }
+.related-posts-grid {
+    grid-template-columns: 1fr;
+}
 
-    .author-social {
-        justify-content: center;
-    }
-
-    .related-posts-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-links {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-    }
-
-    .hero-background {
-        min-height: 400px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.hero-links {
+    flex-direction: column;
+    align-items: stretch;
+}
 }
 
 @media (max-width: 480px) {
@@ -1279,9 +1030,5 @@ img {
         height: 40px;
         padding: 0 var(--space-sm);
         font-size: 0.9rem;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
     }
 }
