@@ -1,0 +1,118 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "slug": "nemesis-blue",
+                    "color": "#1E88E5",
+                    "name": "Nemesis Blue"
+                },
+                {
+                    "slug": "nemesis-blue-bright",
+                    "color": "#2979FF",
+                    "name": "Nemesis Blue Bright"
+                },
+                {
+                    "slug": "aurora-base",
+                    "color": "#00C2A8",
+                    "name": "Aurora Base"
+                },
+                {
+                    "slug": "aurora-flare",
+                    "color": "#33D6B7",
+                    "name": "Aurora Flare"
+                },
+                {
+                    "slug": "nemesis-black",
+                    "color": "#0a0e27",
+                    "name": "Nemesis Black"
+                },
+                {
+                    "slug": "nemesis-white",
+                    "color": "#F4F4F4",
+                    "name": "Nemesis White"
+                }
+            ],
+            "custom": false
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "'Inter', sans-serif",
+                    "name": "Inter",
+                    "slug": "inter"
+                }
+            ],
+            "customFontSize": false
+        },
+        "spacing": {
+            "units": ["px", "em", "rem", "vh", "vw", "%"],
+            "customPadding": true,
+            "customMargin": true,
+            "customGap": true,
+            "blockGap": "var(--space-lg)"
+        },
+        "blocks": {
+            "core/button": {
+                "color": {
+                    "palette": [
+                        { "slug": "nemesis-blue", "color": "#1E88E5", "name": "Nemesis Blue" },
+                        { "slug": "nemesis-black", "color": "#0a0e27", "name": "Nemesis Black" },
+                        { "slug": "nemesis-white", "color": "#F4F4F4", "name": "Nemesis White" }
+                    ]
+                },
+                "typography": {
+                    "fontFamilies": [
+                        { "fontFamily": "'Inter', sans-serif", "name": "Inter", "slug": "inter" }
+                    ]
+                },
+                "spacing": {
+                    "padding": {
+                        "top": "var(--space-sm)",
+                        "bottom": "var(--space-sm)",
+                        "left": "var(--space-lg)",
+                        "right": "var(--space-lg)"
+                    }
+                }
+            }
+        },
+        "custom": {
+            "spacing": {
+                "xs": "6px",
+                "sm": "12px",
+                "md": "20px",
+                "lg": "32px",
+                "xl": "48px"
+            }
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "var(--page-background)",
+            "text": "var(--text-color)"
+        },
+        "typography": {
+            "fontFamily": "var(--font-inter)",
+            "fontSize": "1rem",
+            "lineHeight": "1.7"
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "radius": "var(--ui-radius)"
+                }
+            },
+            "core/post-featured-image": {
+                "spacing": {
+                    "margin": {
+                        "bottom": "var(--space-xl)"
+                    }
+                },
+                "border": {
+                    "radius": "20px"
+                }
+            }
+        }
+    }
+}

@@ -11,4 +11,4 @@
  */
 ?>
 
-<img src="https://via.placeholder.com/128" alt="Brand Mark" class="avatar-mark">
+<img src="https://picsum.photos/seed/nemesis-avatar/128" alt="Brand Mark" class="avatar-mark">

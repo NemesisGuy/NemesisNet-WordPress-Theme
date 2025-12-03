@@ -1,97 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<?php
+/**
+ * Template Name: Style Guide
+ */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NemesisNet Component Library</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        section {
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        h2 {
-            margin-bottom: 30px;
-            color: var(--accent-color);
-            border-left: 4px solid var(--aurora-base);
-            padding-left: 16px;
-        }
-
-        pre {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--ui-radius);
-            padding: var(--space-md);
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-            font-size: 0.9em;
-        }
-
-        code {
-            font-family: inherit;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div id="page" class="site">
-        <header id="masthead" class="site-header">
-            <div class="container">
-                <div class="site-branding">
-                    <a href="#" class="custom-logo-link" rel="home"><img src="assets/nemesis-logo.svg"
-                            class="custom-logo" alt="NemesisNet" style="width:44px;height:44px;border-radius:50%;"></a>
-                    <h1 class="site-title"><a href="#" rel="home">NemesisNet</a></h1>
-                </div><!-- .site-branding -->
-
-                <nav id="site-navigation" class="main-navigation">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li class="menu-item-has-children">
-                            <a href="#">Features</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">Components</a></li>
-                                <li><a href="#">Styles</a></li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">More</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Level 3</a></li>
-                                        <li><a href="#">Level 3b</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav><!-- #site-navigation -->
-
-                <div class="header-actions">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
-                        <i class="fa-solid fa-moon" id="theme-toggle-icon"></i>
-                    </button>
-
-                    <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </header><!-- #masthead -->
+get_header();
+?>
 
         <div class="site-content container">
             <div class="docs-grid">
@@ -426,7 +339,7 @@ hello_world();
                             <figure
                                 class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
                                 <div class="wp-block-embed__wrapper">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
@@ -832,9 +745,7 @@ hello_world();
                             </div>
                             <div class="author-bio-content">
                                 <h3>About Nemesis</h3>
-                                <p>Senior Full-Stack Engineer and Systems Architect. Specializing in high-performance
-                                    web applications, secure infrastructure, and AI integration. Building the future of
-                                    the web, one pixel at a time.</p>
+                                <p>Senior Full-Stack Engineer and Systems Architect. Specializing in high-performance web applications, secure infrastructure, and AI integration. Building the future of the web, one pixel at a time.</p>
                                 <div class="author-links">
                                     <a href="#"><i class="fab fa-github"></i></a>
                                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -853,28 +764,23 @@ hello_world();
                                 <h3 class="related-posts-title">You Might Also Like</h3>
                                 <div class="related-grid">
                                     <div class="related-card">
-                                        <img src="https://picsum.photos/seed/rel1/400/250" alt="Related 1"
-                                            class="related-card-img">
+                                        <img src="https://picsum.photos/seed/rel1/400/250" alt="Related 1" class="related-card-img">
                                         <div class="related-card-content">
-                                            <h4 class="related-card-title"><a href="#">Advanced CSS Grid Layouts</a>
-                                            </h4>
+                                            <h4 class="related-card-title"><a href="#">Advanced CSS Grid Layouts</a></h4>
                                             <span class="related-card-date">Nov 25, 2025</span>
                                         </div>
                                     </div>
                                     <div class="related-card">
-                                        <img src="https://picsum.photos/seed/rel2/400/250" alt="Related 2"
-                                            class="related-card-img">
+                                        <img src="https://picsum.photos/seed/rel2/400/250" alt="Related 2" class="related-card-img">
                                         <div class="related-card-content">
                                             <h4 class="related-card-title"><a href="#">Mastering Dark Mode</a></h4>
                                             <span class="related-card-date">Nov 20, 2025</span>
                                         </div>
                                     </div>
                                     <div class="related-card">
-                                        <img src="https://picsum.photos/seed/rel3/400/250" alt="Related 3"
-                                            class="related-card-img">
+                                        <img src="https://picsum.photos/seed/rel3/400/250" alt="Related 3" class="related-card-img">
                                         <div class="related-card-content">
-                                            <h4 class="related-card-title"><a href="#">WordPress Performance Tips</a>
-                                            </h4>
+                                            <h4 class="related-card-title"><a href="#">WordPress Performance Tips</a></h4>
                                             <span class="related-card-date">Nov 15, 2025</span>
                                         </div>
                                     </div>
@@ -891,20 +797,17 @@ hello_world();
                                 <div class="feature-item">
                                     <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                                     <h3 class="feature-title">Lightning Fast</h3>
-                                    <p class="feature-desc">Optimized for speed with minimal bloat and efficient code
-                                        structure.</p>
+                                    <p class="feature-desc">Optimized for speed with minimal bloat and efficient code structure.</p>
                                 </div>
                                 <div class="feature-item">
                                     <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                                     <h3 class="feature-title">Secure by Default</h3>
-                                    <p class="feature-desc">Built with security best practices to keep your data safe.
-                                    </p>
+                                    <p class="feature-desc">Built with security best practices to keep your data safe.</p>
                                 </div>
                                 <div class="feature-item">
                                     <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                                     <h3 class="feature-title">Fully Responsive</h3>
-                                    <p class="feature-desc">Looks amazing on all devices, from mobile phones to 4K
-                                        desktops.</p>
+                                    <p class="feature-desc">Looks amazing on all devices, from mobile phones to 4K desktops.</p>
                                 </div>
                             </div>
                         </div>
@@ -916,45 +819,4 @@ hello_world();
         </div>
     </div>
 
-    <footer id="colophon" class="site-footer site-footer--page">
-        <div class="container footer-inner">
-            <div class="footer-line">
-                <span>&copy; <span id="footer-month"></span> <span id="footer-year"></span></span>
-                <span class="footer-divider">|</span>
-                <span>Built by <a href="https://github.com/NemesisGuy" target="_blank" rel="noopener"><i
-                            class="fab fa-github" aria-hidden="true"></i> NemesisGuy</a></span>
-                <span class="footer-divider">|</span>
-                <span>Powered by <a href="https://nemesisnet.co.za" target="_blank"
-                        rel="noopener">NemesisNet.co.za</a></span>
-                <span class="footer-divider">|</span>
-                <span>All rights reserved.</span>
-            </div>
-        </div>
-    </footer>
-    </div>
-
-    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
-        <div class="mobile-nav-content">
-            <div class="mobile-nav-header">
-                <div class="site-branding">
-                    <a href="#" class="custom-logo-link" rel="home"><img src="assets/nemesis-logo.svg"
-                            class="custom-logo" alt="NemesisNet" style="width:44px;height:44px;border-radius:50%;"></a>
-                    <h1 class="site-title"><a href="#" rel="home">NemesisNet</a></h1>
-                </div><!-- .site-branding -->
-                <button class="mobile-nav-close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
-            </div>
-            <nav class="mobile-nav-menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <script src="assets/js/theme.js"></script>
-</body>
-
-</html>
+<?php get_footer(); ?>

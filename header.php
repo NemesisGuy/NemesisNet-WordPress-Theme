@@ -98,7 +98,7 @@
                 if ( has_custom_logo() ) {
                     the_custom_logo();
                 } else {
-                    echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link" rel="home"><img src="https://nemesisnet.co.za/assets/optimized/Nemesis_Logo_Icon@128.png" class="custom-logo" alt="NemesisNet" style="width:44px;height:44px;border-radius:50%;"></a>';
+                    echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link" rel="home"><img src="' . get_template_directory_uri() . '/assets/nemesis-logo.svg" class="custom-logo" alt="NemesisNet" style="width:44px;height:44px;border-radius:50%;"></a>';
                 }
                 if ( is_front_page() && is_home() ) :
                     ?>
@@ -116,23 +116,16 @@
                 <?php endif; ?>
             </div><!-- .site-branding -->
 
-            <nav id="site-navigation" class="main-navigation">
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'menu-1',
-                    'menu_id'        => 'primary-menu',
-                    'fallback_cb'    => false,
-                ) );
-                ?>
+            <?php get_template_part('template-parts/navigation'); ?>
+
+            <div class="header-actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="fa-solid fa-moon" id="theme-toggle-icon"></i>
                 </button>
-            </nav><!-- #site-navigation -->
             
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
-                <span class="menu-toggle-icon"></span>
-                <span class="menu-toggle-icon"></span>
-                <span class="menu-toggle-icon"></span>
-            </button>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
 	</header><!-- #masthead -->

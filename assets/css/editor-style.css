@@ -1,0 +1,62 @@
+/* Editor Styles */
+:root {
+    --bg-color: #0a0e17;
+    --text-color: #e0e6ed;
+    --accent-color: #1E88E5;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-main: 'Inter', sans-serif;
+    --space-md: 20px;
+    --space-lg: 40px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Blocks */
+.wp-block {
+    max-width: 800px;
+}
+
+.wp-block-quote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: var(--space-md);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wp-block-code {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: var(--space-md);
+    font-family: 'Fira Code', monospace;
+}
+
+/* Glassmorphism Simulation for Editor */
+.wp-block-group.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: var(--space-lg);
+}

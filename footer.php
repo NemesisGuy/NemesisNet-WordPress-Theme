@@ -1,77 +1,43 @@
     <?php get_template_part('components/footer'); ?>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </div><!-- #page -->
 
-<script>
-(function(){
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeToggleIcon = document.getElementById('theme-toggle-icon');
-  const STYLE_STORAGE_KEY = 'nemesis-theme-mode';
-
-  function setLight(light){
-    if(light){
-      document.documentElement.setAttribute('data-theme','light');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
-
-    if(themeToggle){
-      themeToggle.classList.toggle('is-light', light);
-      themeToggle.setAttribute('aria-pressed', String(light));
-      themeToggle.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
-      themeToggle.setAttribute('title', light ? 'Switch to dark mode' : 'Switch to light mode');
-    }
-
-    if(themeToggleIcon){
-      themeToggleIcon.classList.toggle('fa-sun', light);
-      themeToggleIcon.classList.toggle('fa-moon', !light);
-    }
-    
-    localStorage.setItem(STYLE_STORAGE_KEY, light ? 'light' : 'dark');
-  }
-
-  if(themeToggle){
-    themeToggle.addEventListener('click', ()=>{
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      setLight(!isLight);
-    });
-  }
-
-  // Init theme
-  const savedTheme = localStorage.getItem(STYLE_STORAGE_KEY);
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  if (savedTheme === 'light') {
-      setLight(true);
-  } else if (savedTheme === 'dark') {
-      setLight(false);
-  } else {
-      setLight(!prefersDark); // Default to system preference if no save
-  }
-
-  // Footer Dates
-  const now = new Date();
-  const monthName = now.toLocaleString('default',{month:'long'});
-  const footerYear = document.getElementById('footer-year');
-  const footerMonth = document.getElementById('footer-month');
-  
-  if(footerYear) footerYear.textContent = now.getFullYear();
-  if(footerMonth) footerMonth.textContent = monthName;
-
-  // Mobile Menu Toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const siteNavigation = document.getElementById('site-navigation');
-  
-  if(menuToggle && siteNavigation) {
-    menuToggle.addEventListener('click', function() {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-      menuToggle.classList.toggle('is-active');
-      siteNavigation.classList.toggle('is-open');
-    });
-  }
-})();
-</script>
-</div><!-- #page -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <div class="mobile-nav-content">
+        <div class="mobile-nav-header">
+            <div class="site-branding">
+                <?php
+                if ( has_custom_logo() ) {
+                    the_custom_logo();
+                } else {
+                    echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link" rel="home"><img src="' . get_template_directory_uri() . '/assets/nemesis-logo.svg" class="custom-logo" alt="NemesisNet" style="width:44px;height:44px;border-radius:50%;"></a>';
+                }
+                if ( is_front_page() && is_home() ) :
+                    ?>
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php
+                else :
+                    ?>
+                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <?php
+                endif;
+                ?>
+            </div><!-- .site-branding -->
+            <button class="mobile-nav-close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="mobile-nav-menu">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'menu-1',
+                'menu_id'        => 'mobile-primary-menu',
+                'container'      => false,
+            ) );
+            ?>
+        </nav>
+    </div>
+</div>
 
 <?php wp_footer(); ?>
 
