@@ -2539,8 +2539,48 @@ table {
     padding-left: 5px;
 }
 
-/* Responsive Sidebar */
-@media (max-width: 800px) {
+/* Taxonomy Pills */
+.post-meta-item a,
+.tags-links a {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Category Pills (Blue) */
+.post-meta-item a[rel="category tag"] {
+    background: rgba(41, 121, 255, 0.15);
+    color: var(--nemesis-blue-bright);
+    border: 1px solid rgba(41, 121, 255, 0.3);
+}
+
+.post-meta-item a[rel="category tag"]:hover {
+    background: var(--nemesis-blue-bright);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Tag Pills (Green) */
+.tags-links a {
+    background: rgba(0, 194, 168, 0.15);
+    color: var(--aurora-base);
+    border: 1px solid rgba(0, 194, 168, 0.3);
+}
+
+.tags-links a:hover {
+    background: var(--aurora-base);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsive Utilities */
+@media (max-width: 1200px) {
     .content-area-wrapper {
         flex-direction: column;
     }
