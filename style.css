@@ -629,6 +629,11 @@ html[data-theme="light"] .btn-ghost:hover {
     transition: all 0.2s ease;
     box-sizing: border-box;
     line-height: 1;
+    margin-top: 0;
+    vertical-align: middle;
+}
+
+.entry-footer .read-more {
     margin-top: 15px;
 }
 
