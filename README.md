@@ -82,6 +82,23 @@ Go to **Analytics** in the admin menu to add your Umami tracking code.
 ### AI / LLM
 The theme serves `llms.txt` automatically at `yoursite.com/llms.txt`. Tune it under the **LLM / llms.txt** theme page (enable toggle, summary, post count, pages, extra Markdown). No plugin required.
 
+Test it: open `/llms.txt` → title, summary, recent posts, pages all listed → save a post → reload `/llms.txt` → list updates (12h cache, busted on save). Toggle off → `/llms.txt` returns 404. If it 404s while enabled, re-save **Settings → Permalinks** once (rewrite flush).
+
+## Release Testing Checklist
+
+Run this on a staging/dev copy before every merge + release:
+
+- [ ] Upload the release zip, activate, hard-refresh (Ctrl+Shift+R).
+- [ ] **Purge every cache**: caching plugin (if any) **and** Cloudflare (Caching → Purge Everything, or Purge by URL for `style.css`). Stale edge cache is the #1 cause of "my fix isn't live" — verify with `curl -sI` or DevTools: `cf-cache-status` should be MISS/EXPIRED on first hit, and the served CSS must contain the new rules.
+- [ ] Confirm `style.css?ver=X` matches the release version in DevTools → Sources.
+- [ ] One table-heavy post in **dark + light** mode, desktop + ~390px width (headers distinct, stripes or `table-plain`, swipe-scroll works).
+- [ ] Code block readable in both modes; TL;DR + lesson cards readable in both modes.
+- [ ] Click a post image → lightbox opens, Esc/backdrop closes.
+- [ ] Learn grid: 4-across desktop, tight icon→title gap, icon colors render.
+- [ ] `/llms.txt` serves and updates (see above).
+- [ ] Editor shows styled cards/patterns, not grey boxes.
+- [ ] Console: zero errors; no 404s for theme assets.
+
 ## Customization
 
 ### Theme Options
