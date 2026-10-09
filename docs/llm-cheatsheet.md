@@ -2,6 +2,10 @@
 
 This document provides a comprehensive reference for generating HTML content that aligns with the NemesisNet theme's glassmorphic design system.
 
+> **Writing a blog post?** Read [`post-kit.md`](post-kit.md) first — it is
+> the current post-authoring reference (native classes + patterns, no custom
+> CSS). This cheatsheet covers the wider component system.
+
 
 ## Note!!
  

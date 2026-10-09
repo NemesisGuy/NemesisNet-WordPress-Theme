@@ -4,7 +4,7 @@ Theme URI: https://nemesisnet.co.za
 Author: NemesisNet Team
 Author URI: https://nemesisnet.co.za
 Description: A custom WordPress theme based on the NemesisNet Brand Guide.
-Version: 2.1.2
+Version: 2.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: nemesisnet
@@ -1651,7 +1651,7 @@ html[data-theme="light"] .hero-background::before {
 }
 
 .features-grid--compact .feature-item {
-    padding: var(--space-md);
+    padding: 16px;
 }
 
 .features-grid--compact .feature-icon {
@@ -1659,12 +1659,49 @@ html[data-theme="light"] .hero-background::before {
     height: 48px;
     font-size: 1.5rem;
     border-radius: 12px;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 8px;
 }
 
 .features-grid--compact .feature-title {
     font-size: 1.1rem;
+    margin-bottom: 6px;
 }
+
+.features-grid--compact .feature-description {
+    font-size: 0.9rem;
+}
+
+/* Per-item icon color options (v2.1.3): tinted tiles for learn/feature
+   grids. Default .feature-icon stays the blue→aurora gradient.
+   Usage: <div class="feature-icon feature-icon--amber">… */
+.feature-icon--blue {
+    background: rgba(41, 121, 255, 0.15);
+    border: 1px solid rgba(41, 121, 255, 0.4);
+    color: #2979ff;
+}
+
+.feature-icon--amber {
+    background: rgba(255, 170, 0, 0.15);
+    border: 1px solid rgba(255, 170, 0, 0.4);
+    color: #ffaa00;
+}
+
+.feature-icon--green {
+    background: rgba(0, 200, 150, 0.15);
+    border: 1px solid rgba(0, 200, 150, 0.4);
+    color: #00c896;
+}
+
+.feature-icon--purple {
+    background: rgba(206, 147, 216, 0.15);
+    border: 1px solid rgba(206, 147, 216, 0.4);
+    color: #ce93d8;
+}
+
+html[data-theme="light"] .feature-icon--blue { color: #1e63c8; }
+html[data-theme="light"] .feature-icon--amber { color: #b87700; }
+html[data-theme="light"] .feature-icon--green { color: #008b6a; }
+html[data-theme="light"] .feature-icon--purple { color: #9c5fb0; }
 
 /* Feature List */
 .features-list {

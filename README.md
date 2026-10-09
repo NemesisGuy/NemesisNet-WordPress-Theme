@@ -146,7 +146,9 @@ Check `components-demo.php` for a static HTML reference, or use the **"Demo Page
 
 ## Documentation
 
+- **[Post Kit Guide](docs/post-kit.md)**: How to write posts with native classes and patterns — no custom CSS. Start here.
 - **[LLM Cheatsheet](docs/llm-cheatsheet.md)**: A quick reference for LLMs to generate theme-compliant HTML.
+- **[Development Notes](docs/dev-notes.md)**: Technical details and development logs.
 - **[Project Plan](docs/plan.md)**: Roadmap and task tracking.
 
 ## Support

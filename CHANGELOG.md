@@ -1,5 +1,25 @@
 # NemesisNet Theme Changelog
 
+## 2.1.3 — 2026-10-09
+
+### Fixed
+- **Learn-grid whitespace**: compact cards had 20px icon gaps and full-size
+  padding. Icon gap 8px, card padding 16px, tighter title/description rhythm.
+
+### Added
+- **Icon color options**: `feature-icon--blue/--amber/--green/--purple`
+  tinted tiles (the per-post colors, nativised) with light-mode-safe text.
+  Default tile unchanged. Editor preview included.
+- **Post Kit guide** (`docs/post-kit.md`): the full authoring reference for
+  humans and agents — every class, pattern, snippet, and the old-post
+  migration checklist. Linked from README.
+
+### Housekeeping
+- Removed dead weight: `style-cludebroke.css`, `style-corrupted.css`,
+  `style.css.corrupted`, `fix-style.ps1`, and the superseded static
+  `components.html` (the WP-native `page-demo.php` + styleguide are the
+  reference now). Old build zips were never tracked (gitignored).
+
 ## 2.1.2 — 2026-10-09
 
 ### Fixed
