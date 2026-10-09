@@ -1,5 +1,19 @@
 # NemesisNet Theme Changelog
 
+## Unreleased (version number TBD by maintainer)
+
+### Fixed
+- **Learn-grid gap, real root cause**: a duplicate legacy "Features
+  Component" block later in `style.css` silently overrode the documented
+  component by source order (`minmax(280px,1fr)` grid, 32px card padding,
+  20px icon margin) — this is why tightening the documented rules changed
+  nothing on dev. Legacy block deleted; single source of truth restored.
+- **Heading top margins**: `.feature-title` / `.feature-description` /
+  `.feature-list-title` / `.feature-list-description` / `.feature-desc`
+  never reset `margin-top`, so every card title carried ~21px of browser
+  default margin above it. Now `margin-top: 0` — the icon→title gap is just
+  the 6px compact icon margin.
+
 ## 2.1.4 — 2026-10-09
 
 ### Fixed

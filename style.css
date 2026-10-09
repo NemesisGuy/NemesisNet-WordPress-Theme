@@ -1632,6 +1632,7 @@ html[data-theme="light"] .hero-background::before {
 .feature-title {
     font-size: 1.3rem;
     font-weight: 600;
+    margin-top: 0;
     margin-bottom: var(--space-sm);
     color: var(--text-color);
 }
@@ -1639,6 +1640,7 @@ html[data-theme="light"] .hero-background::before {
 .feature-description {
     color: var(--text-muted);
     line-height: 1.6;
+    margin-top: 0;
 }
 
 /* Compact learn-grid variant for in-post use (v2.1.2): tighter cards that
@@ -1745,6 +1747,7 @@ html[data-theme="light"] .feature-icon--purple { color: #9c5fb0; }
 .feature-list-title {
     font-size: 1.1rem;
     font-weight: 600;
+    margin-top: 0;
     margin-bottom: var(--space-xs);
     color: var(--text-color);
 }
@@ -1753,6 +1756,7 @@ html[data-theme="light"] .feature-icon--purple { color: #9c5fb0; }
     color: var(--text-muted);
     line-height: 1.5;
     font-size: 0.95rem;
+    margin-top: 0;
 }
 
 /* Stats Section */
@@ -2406,38 +2410,14 @@ html[data-theme="light"] #mobile-nav-overlay {
     color: var(--text-muted);
 }
 
-/* Features Component */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-lg);
-    margin: var(--space-lg) 0;
-}
-
-.feature-item {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--ui-radius);
-    padding: var(--space-lg);
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-icon {
-    font-size: 2.5rem;
-    color: var(--aurora-base);
-    margin-bottom: var(--space-md);
-}
-
-.feature-title {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-sm);
-    color: var(--text-color);
-}
-
+/* Features Component — NOTE: the documented component lives with the
+   Feature Sections block above; do NOT re-add per-component overrides here
+   or they will silently win by source order (v2.1.x dedup). Only the
+   demo-only .feature-desc alias remains. */
 .feature-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
+    margin-top: 0;
 }
 
 /* Reinforce Comment Avatar Styles */
