@@ -1,5 +1,20 @@
 # NemesisNet Theme Changelog
 
+## 2.1.4 — 2026-10-09
+
+### Fixed
+- **Learn-grid icon gap**: compact icon→title margin 8px → 6px, card
+  padding 16px → 14px vertical. (If the gap still looks ~20px+ on dev, the
+  post HTML is still on plain `features-grid` without `--compact` — the
+  full converted post code ships with the compact class applied.)
+
+### Versioning note
+- Main repo (`master`) is at 2.0.0 with no tags/releases — there is no
+  published 2.1.x artifact to patch-bump from. The 2.1.x line lives on
+  `feat/v2.1-theme-improvements` + dev (2.1.3). Bumping "Y from published"
+  would mean 2.0.1, which WordPress would read as a *downgrade* of the
+  installed 2.1.3 and refuse/hide the update. So: patch bump on our line.
+
 ## 2.1.3 — 2026-10-09
 
 ### Fixed
