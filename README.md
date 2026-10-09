@@ -134,6 +134,7 @@ Check `components-demo.php` for a static HTML reference, or use the **"Demo Page
 
 ## Version History
 
+- **2.1.0** - Post kit (native post classes + 8 block patterns), light/dark correctness fixes (code blocks, tables, glass, accent picker), image lightbox, tech-stack pills, compact learn grid, editor parity, Prism removal, Glass Intensity slider, html5/responsive-embeds, docs + repo cleanup.
 - **2.0.8** - Header search toggle, breadcrumbs/pagination QA, new Gutenberg patterns (Hero, Project Card), mobile nav JS hardening
 - **2.0.1** - Added References component, Breadcrumbs, Nav Search, Pagination toggles, and fixed archive/search layouts.
 - **2.0.0** - Major update: Customizer support, new templates (Sidebar Left/Right), Gutenberg editor styles, reading time, back-to-top button, and sticky header.
@@ -152,6 +153,10 @@ Check `components-demo.php` for a static HTML reference, or use the **"Demo Page
 - **[Project Plan](docs/plan.md)**: Roadmap and task tracking.
 
 ## Support
+
+- **Website**: [nemesisnet.co.za](https://nemesisnet.co.za)
+- **Author**: [NemesisGuy on GitHub](https://github.com/NemesisGuy) — [LinkedIn](https://www.linkedin.com/in/peter-buckingham-65438757)
+- **Issues**: please use the [GitHub repository](https://github.com/NemesisGuy/NemesisNet-WordPress-Theme) issue tracker.
 
 For issues or questions, please visit the [GitHub repository](https://github.com/NemesisGuy/NemesisNet-WordPress-Theme).
 

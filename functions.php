@@ -11,6 +11,12 @@ if ( ! function_exists( 'nemesisnet_setup' ) ) :
         // Let WordPress manage the document title.
         add_theme_support( 'title-tag' );
 
+        // HTML5 markup for core components (search form, comments, galleries).
+        add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
+
+        // Responsive embedded content.
+        add_theme_support( 'responsive-embeds' );
+
         // Enable support for Post Thumbnails on posts and pages.
         add_theme_support( 'post-thumbnails' );
 
