@@ -14,6 +14,9 @@ written for humans **and** coding agents generating post HTML.
   to "fix" alignment; if something looks off, the class is wrong, not your CSS.
 - Legacy aliases `my-section` → `post-section` and `my-cta` → `post-cta` still
   work, but write the new names.
+- Do not put `<br>` inside flex rows (`tech-stack`, `post-cta__buttons`).
+  WordPress injects one per newline and each forces a line break. The theme
+  neutralizes strays, but clean pastes render first time, every time.
 
 ## Sections
 

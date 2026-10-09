@@ -3220,6 +3220,17 @@ html[data-theme="light"] .tech-pill {
     color: #008B6A;
 }
 
+/* Stray <br> neutralization: wpautop inserts a <br> per newline inside
+   Custom HTML, and inside a flex container each one forces a line break
+   (this is what once stacked .tech-stack pills vertically). Hidden only
+   in known post-kit containers — prose <br> elsewhere is untouched. */
+.tech-stack > br,
+.post-cta__buttons > br,
+.entry-meta > br,
+.wp-block-image > br {
+    display: none;
+}
+
 /* ============================================================
  * v2.1 — Image lightbox (F6): native <dialog> styles
  * ============================================================ */
