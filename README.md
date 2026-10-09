@@ -13,7 +13,16 @@ A custom WordPress theme based on the NemesisNet Brand Guide, featuring a modern
 - ⚡ **Performance Optimized**: Lightweight and fast-loading
 - 🌓 **Theme Toggle**: Switch between dark and light modes
 - 🧩 **Reusable Components**: Includes cards, buttons, hero links, and more
+- 📑 **References Component**: Styled list for sources and citations
+- 🔍 **Nav Search**: Integrated header search toggle with glass styling
+- 🍞 **Breadcrumbs**: Navigation trail for better UX
 - 📄 **Demo Page Template**: Full component showcase page template (`page-demo.php`)
+
+## Glass Layout Rule-of-Thumb
+
+- Use `glass-section` for prose blocks (paragraphs, quotes, headings) and feel free to keep multiple related paragraphs inside one section for flow.
+- When the next block is a list/table/grid, close the `glass-section`, add a sibling `glass-card` for that structured content, then open a new section for the following prose if needed.
+- Never wrap a `glass-card` inside a `glass-section`; instead stack them sequentially (section → card → section, etc.).
 
 ## Installation
 
@@ -34,12 +43,24 @@ git clone https://github.com/NemesisGuy/NemesisNet-WordPress-Theme.git nemesisne
 
 Then activate the theme from WordPress Admin.
 
+## 🐛 Recently Fixed (v2.0.8)
+
+- **Nav Search**: header search toggle now opens/closes the search form (Esc closes).
+- **Breadcrumbs**: now render on posts, pages, archives, and search (toggle in Customizer → Layout).
+- **Pagination**: numbered pagination renders on the blog feed when more than one page exists (toggle in Customizer → Layout).
+
 ## Configuration
 
 ### Customizer
-Go to **Appearance > Customize** to configure all theme settings:
+Go to **Appearance > Customize > NemesisNet Settings** to configure all theme settings:
 - **General**: Accent Color, Default Theme Mode.
-- **Layout**: Global Sidebar Position, Sidebar Title, Sticky Header.
+- **Layout**: 
+    - Global Sidebar Position & Title
+    - Sticky Header
+    - **Show Breadcrumbs** (New)
+    - **Show Pagination** (New)
+    - **Show Search in Nav** (New)
+    - Author Bio Toggle
 - **UI Aesthetics**: Glass Blur, Border Radius.
 - **Miscellaneous**: Rickroll URL.
 
@@ -52,6 +73,7 @@ This theme includes several templates for Pages and Posts:
 ### Features
 - **Back to Top**: Automatically appears when scrolling down.
 - **Reading Time**: Displayed on single posts.
+- **References**: Add sources via the "Sources & References" meta box on posts.
 - **Editor Styles**: Gutenberg editor matches the frontend design.
 
 ### Analytics
@@ -84,13 +106,14 @@ The theme uses CSS custom properties for easy customization:
 - **Buttons**: Primary, ghost, and Aurora-themed buttons.
 - **Hero Links**: Styled navigation links for CTAs.
 - **Pills & Tags**: Rounded elements for categories and highlights.
+- **Breadcrumbs & Pagination**: Consistent across posts, pages, archives, and search.
 - **Carousel**: Interactive image/content slider.
 - **Stats Grid**: Animated statistic counters.
 - **Feature Blocks**: Icon-based feature highlights.
 - **Related Posts**: Grid layout for suggested content.
 - **Author Bio**: Stylish author information box.
+- **References List**: Styled component for external links.
 - **Comments**: Custom-styled comment list and form.
-- **Navigation**: Breadcrumbs, Pagination, and Post Navigation.
 - **Navigation**: Breadcrumbs, Pagination, and Post Navigation.
 - **Footer**: Dynamic footer with year and attribution.
 
@@ -111,6 +134,8 @@ Check `components-demo.php` for a static HTML reference, or use the **"Demo Page
 
 ## Version History
 
+- **2.0.8** - Header search toggle, breadcrumbs/pagination QA, new Gutenberg patterns (Hero, Project Card), mobile nav JS hardening
+- **2.0.1** - Added References component, Breadcrumbs, Nav Search, Pagination toggles, and fixed archive/search layouts.
 - **2.0.0** - Major update: Customizer support, new templates (Sidebar Left/Right), Gutenberg editor styles, reading time, back-to-top button, and sticky header.
 - **1.9.1** - Fixed sidebar layout issues and added global position setting.
 - **1.9.0** - Added Demo Page template, improved post navigation, and refined responsive layouts
@@ -118,6 +143,11 @@ Check `components-demo.php` for a static HTML reference, or use the **"Demo Page
 - **1.7.0** - Added category/tag pills and responsive image support
 - **1.6.0** - Enhanced responsive image handling
 - **1.5.0** - Initial release with core features
+
+## Documentation
+
+- **[LLM Cheatsheet](docs/llm-cheatsheet.md)**: A quick reference for LLMs to generate theme-compliant HTML.
+- **[Project Plan](docs/plan.md)**: Roadmap and task tracking.
 
 ## Support
 

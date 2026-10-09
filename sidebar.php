@@ -8,9 +8,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area glass-section">
+<aside id="secondary" class="widget-area">
     <?php
-    $sidebar_title = get_option('nemesisnet_sidebar_title', '');
+    $sidebar_title = get_theme_mod('nemesisnet_sidebar_title', '');
     if ( ! empty( $sidebar_title ) ) {
         echo '<h2 class="sidebar-main-title">' . esc_html( $sidebar_title ) . '</h2>';
     }

@@ -8,7 +8,7 @@ get_header();
 
 <main id="primary" class="site-main">
     <div class="container site-content">
-        <div class="content-area-wrapper" style="flex-direction: row-reverse;">
+        <div class="content-area-wrapper sidebar-left">
             <div class="primary-content">
                 <?php
                 while ( have_posts() ) :

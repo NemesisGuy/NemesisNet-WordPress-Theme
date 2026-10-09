@@ -4,6 +4,16 @@ This document outlines the development plan for the NemesisNet WordPress Theme, 
 
 ---
 
+## Active Work (2025-12-07)
+
+- [x] Breadcrumbs + pagination QA: ensure breadcrumbs render on posts/pages/archives/search and pagination styles/logic remain consistent.
+- [x] Mobile nav + theme toggle hardening: rely on a single JS source (theme.js) and verify overlay visibility in light/dark modes.
+- [x] Image card polish: center images within `.image-card` containers.
+- [x] Gutenberg blocks: add NemesisNet block category and starter patterns; grow into reusable blocks aligned with theme styles.
+- [x] Header search: glassy nav search form with toggle, aria-expanded, and Esc to close.
+
+---
+
 ## 1. WordPress-specific Template Components
 *Status: Completed*
 

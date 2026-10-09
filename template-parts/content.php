@@ -22,6 +22,23 @@
                 <span class="byline">
                     <i class="fas fa-user"></i> <?php the_author(); ?>
                 </span>
+                <span class="reading-time">
+                    <i class="fas fa-clock"></i> <?php echo nemesisnet_reading_time(); ?>
+                </span>
+                <?php
+                // Categories (Limit 3)
+                $categories = get_the_category();
+                if ( ! empty( $categories ) ) {
+                    echo '<span class="cat-links">';
+                    $count = 0;
+                    foreach ( $categories as $category ) {
+                        $count++;
+                        if ( $count > 3 ) break;
+                        echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a>';
+                    }
+                    echo '</span>';
+                }
+                ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -46,6 +63,12 @@
 
     <?php if ( ! is_singular() ) : ?>
         <footer class="entry-footer">
+            <?php
+            $tags_list = get_the_tag_list( '', ' ' );
+            if ( $tags_list ) {
+                echo '<div class="tags-links">' . $tags_list . '</div>';
+            }
+            ?>
             <a href="<?php the_permalink(); ?>" class="read-more"><?php esc_html_e( 'Read More', 'nemesisnet' ); ?></a>
         </footer><!-- .entry-footer -->
     <?php endif; ?>

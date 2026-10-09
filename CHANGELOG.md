@@ -1,5 +1,38 @@
 # NemesisNet Theme Changelog
 
+## 2.1.0 — 2026-10-09 (includes merged pre-existing work, repaired)
+
+### Merged from pre-existing uncommitted work (all valid, kept)
+- Header nav search toggle wired to Customizer setting + new `searchform.php`.
+- Breadcrumbs component (`template-parts/breadcrumbs.php`) rendered on
+  index/single/page/archive/search, with Customizer toggle.
+- Pagination switched to guarded numbered `the_posts_pagination` with
+  Customizer toggle.
+- Archive/search layouts refactored onto shared `template-parts/content*.php`
+  with sidebar support; no-results case uses new `content-none.php`.
+- content.php: reading time, limited category links, tag links.
+- content-single.php: references section + author-bio (new template parts,
+  meta box in `inc/references-meta.php`), gated by Author Bio toggle.
+- Sidebar title now reads `get_theme_mod`; inline `row-reverse` styles
+  replaced with `sidebar-left` class; `glass-section` dropped from
+  article/aside wrappers.
+- theme.js: DOMContentLoaded hardening, ARIA-correct theme toggle,
+  search/menu toggles, scrollspy, copy-to-clipboard buttons.
+- README version history + component docs.
+
+### Repairs applied while merging (were broken in the uncommitted work)
+- **footer.php was truncated** (unclosed button, missing `#page` close,
+  mobile nav overlay, `wp_footer()`): restored. Without this no footer
+  scripts would print at all.
+- **Missing `template-parts/content-none.php`** (archive/search referenced
+  it; fallback would have rendered a broken article): created.
+- **archive.php/search.php read sidebar position via `get_option()`**,
+  which is never set (Customizer stores a theme_mod): switched to
+  `get_theme_mod()`, matching index.php.
+- Removed `// DEBUG:` comments from breadcrumbs/pagination templates.
+- README: stale "Known Issues (v2.0.3)" rewritten as fixed; removed dead
+  `docs/dev-notes.md` link.
+
 ## 2.1.0 — 2026-10-09
 
 ### Fixed (P0)
