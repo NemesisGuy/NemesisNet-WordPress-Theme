@@ -111,7 +111,7 @@ function nemesisnet_llms_page() {
                     <th scope="row"><label for="nemesisnet_llms_extra">Extra Markdown</label></th>
                     <td>
                         <textarea name="nemesisnet_llms_extra" id="nemesisnet_llms_extra" rows="6" class="large-text code" placeholder="## Contact&#10;- [Email](mailto:you@example.com)"><?php echo esc_textarea( $extra ); ?></textarea>
-                        <p class="description">Appended verbatim under an <code>## Optional</code> heading. Plain Markdown only.</p>
+                        <p class="description">Appended verbatim at the end. An <code>## Optional</code> heading is added unless your text already starts with its own heading.</p>
                     </td>
                 </tr>
             </table>
@@ -182,6 +182,8 @@ function nemesisnet_llms_md_link( $title, $url, $desc = '' ) {
     }
     $line = '- [' . $title . '](' . esc_url_raw( $url ) . ')';
     $desc = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( (string) $desc ) ) );
+    // Excerpts come back entity-encoded (& #8211; etc.) — decode for Markdown.
+    $desc = html_entity_decode( $desc, ENT_QUOTES, get_bloginfo( 'charset' ) );
     if ( '' !== $desc ) {
         if ( function_exists( 'mb_substr' ) ) {
             $desc = mb_substr( $desc, 0, 180 );
@@ -242,7 +244,11 @@ function nemesisnet_llms_build() {
 
     $extra = trim( (string) nemesisnet_llms_get( 'extra' ) );
     if ( '' !== $extra ) {
-        $lines[] = '## Optional';
+        // Don't double the heading if the user already wrote their own.
+        $first_line = strtok( $extra, "\r\n" );
+        if ( ! preg_match( '/^#{1,6}\s/', ltrim( (string) $first_line ) ) ) {
+            $lines[] = '## Optional';
+        }
         $lines[] = $extra;
         $lines[] = '';
     }
