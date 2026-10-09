@@ -1,5 +1,15 @@
 # NemesisNet Theme Changelog
 
+## 2.1.6 — 2026-10-09 (bug-fix build; release version TBD at master merge)
+
+### Fixed
+- **Card heading gap, confirmed via DevTools**: `.post-content h4`
+  (specificity 0,1,1) was overriding `.feature-title` (0,1,0), injecting the
+  48px prose `margin-top` into every card title. The prose rhythm rule is
+  now scoped to plain headings (`:not([class])`) so component headings keep
+  their own margins. Same protection for all future components with classed
+  headings inside post content.
+
 ## 2.1.5 — 2026-10-09 (bug-fix build; release version TBD at master merge)
 
 ### Fixed
