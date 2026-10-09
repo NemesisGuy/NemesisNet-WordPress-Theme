@@ -1,0 +1,156 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - link "Skip to content" [ref=f11e3] [cursor=pointer]:
+      - /url: "#primary"
+    - banner [ref=f11e4]:
+      - generic [ref=f11e5]:
+        - generic [ref=f11e6]:
+          - link [ref=f11e7] [cursor=pointer]:
+            - /url: https://dev-blog.nemesisnet.co.za/
+            - img "NemesisNet" [ref=f11e8]
+          - heading [level=1] [ref=f11e9]:
+            - link "NemesisNet Lab – Dev" [ref=f11e10] [cursor=pointer]:
+              - /url: https://dev-blog.nemesisnet.co.za/
+          - paragraph [ref=f11e11]: Devlicous
+        - navigation [ref=f11e12]:
+          - list [ref=f11e14]:
+            - listitem [ref=f11e15]:
+              - link "Home" [ref=f11e16] [cursor=pointer]:
+                - /url: https://dev-blog.nemesisnet.co.za/
+            - listitem [ref=f11e17]:
+              - link "Privacy Policy" [ref=f11e18] [cursor=pointer]:
+                - /url: https://dev-blog.nemesisnet.co.za/privacy-policy/
+            - listitem [ref=f11e19]:
+              - link "Nemesis Theme" [ref=f11e20] [cursor=pointer]:
+                - /url: https://dev-blog.nemesisnet.co.za/nemesis-theme/
+            - listitem [ref=f11e21]:
+              - link "Sample Page" [ref=f11e22] [cursor=pointer]:
+                - /url: https://dev-blog.nemesisnet.co.za/sample-page/
+        - generic [ref=f11e23]:
+          - button "Switch to dark mode" [pressed] [ref=f11e24] [cursor=pointer]:
+            - generic [ref=f11e25]: 
+          - text: 
+    - main [ref=f11e26]:
+      - generic [ref=f11e27]:
+        - navigation "Breadcrumb" [ref=f11e28]:
+          - link "Home" [ref=f11e30] [cursor=pointer]:
+            - /url: https://dev-blog.nemesisnet.co.za/
+          - generic [ref=f11e31]: /
+        - generic [ref=f11e32]:
+          - generic [ref=f11e33]:
+            - article [ref=f11e34]:
+              - generic [ref=f11e35]:
+                - heading [level=2] [ref=f11e36]:
+                  - link "test 3" [ref=f11e37] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-3/
+                - generic [ref=f11e38]:
+                  - generic [ref=f11e39]:
+                    - generic [ref=f11e40]: 
+                    - text: December 5, 2025
+                  - generic [ref=f11e41]:
+                    - generic [ref=f11e42]: 
+                    - text: Nemesis
+                  - generic [ref=f11e43]:
+                    - generic [ref=f11e44]: 
+                    - text: 14 min read
+                  - link "Uncategorized" [ref=f11e46] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/category/uncategorized/
+              - link [ref=f11e48] [cursor=pointer]:
+                - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-3/
+              - paragraph [ref=f11e50]: Multi-tenancy is the backbone of successful SaaS. Get it right, and scaling from 10 to 10,000 tenants is a database config change. Get it wrong, and every new feature requires rewriting the data access layer. We have built three multi-tenant SaaS applications with Spring Boot, and the patterns that worked are simpler than you would […]
+              - link "Read More" [ref=f11e52] [cursor=pointer]:
+                - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-3/
+            - article [ref=f11e53]:
+              - generic [ref=f11e54]:
+                - heading [level=2] [ref=f11e55]:
+                  - link "test 2" [ref=f11e56] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-2/
+                - generic [ref=f11e57]:
+                  - generic [ref=f11e58]:
+                    - generic [ref=f11e59]: 
+                    - text: December 5, 2025
+                  - generic [ref=f11e60]:
+                    - generic [ref=f11e61]: 
+                    - text: Nemesis
+                  - generic [ref=f11e62]:
+                    - generic [ref=f11e63]: 
+                    - text: 1 min read
+                  - link "Uncategorized" [ref=f11e65] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/category/uncategorized/
+              - paragraph [ref=f11e67]: "2. Breadcrumbs What it is: A navigation trail displayed below the header. Customization: Can be toggled on/off via Appearance > Customize > NemesisNet Settings > Layout Settings > Show Breadcrumbs. 3. Navigation Search What it is: A search icon in the header that opens a full-screen glassmorphic search overlay. Customization: Can be toggled on/off via […]"
+              - link "Read More" [ref=f11e69] [cursor=pointer]:
+                - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-2/
+            - navigation "Posts pagination" [ref=f11e70]:
+              - heading "Posts pagination" [level=2] [ref=f11e71]
+              - generic [ref=f11e72]:
+                - generic [ref=f11e73]: "1"
+                - link "2" [ref=f11e74] [cursor=pointer]:
+                  - /url: https://dev-blog.nemesisnet.co.za/page/2/
+                - link "Next " [ref=f11e75] [cursor=pointer]:
+                  - /url: https://dev-blog.nemesisnet.co.za/page/2/
+                  - generic [ref=f11e76]: Next
+                  - generic [ref=f11e77]: 
+          - complementary [ref=f11e78]:
+            - search [ref=f11e80]:
+              - generic [ref=f11e81]: Search
+              - generic [ref=f11e82]:
+                - searchbox "Search" [ref=f11e83]
+                - button "Search" [ref=f11e84] [cursor=pointer]
+            - generic [ref=f11e86]:
+              - heading "Recent Posts" [level=2] [ref=f11e87]
+              - list [ref=f11e88]:
+                - listitem [ref=f11e89]:
+                  - link "test 3" [ref=f11e90] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-3/
+                - listitem [ref=f11e91]:
+                  - link "test 2" [ref=f11e92] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-2/
+                - listitem [ref=f11e93]:
+                  - link "test 1" [ref=f11e94] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/2025/12/05/test-1/
+                - listitem [ref=f11e95]:
+                  - link "Hello world!" [ref=f11e96] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/2025/12/02/hello-world/
+            - generic [ref=f11e98]:
+              - heading "Recent Comments" [level=2] [ref=f11e99]
+              - list [ref=f11e100]:
+                - listitem [ref=f11e101]:
+                  - article [ref=f11e102]:
+                    - generic [ref=f11e103]:
+                      - link "A WordPress Commenter" [ref=f11e104] [cursor=pointer]:
+                        - /url: https://wordpress.org/
+                      - text: "on"
+                      - link "Hello world!" [ref=f11e105] [cursor=pointer]:
+                        - /url: https://dev-blog.nemesisnet.co.za/2025/12/02/hello-world/#comment-1
+            - generic [ref=f11e107]:
+              - heading "Archives" [level=2] [ref=f11e108]
+              - list [ref=f11e109]:
+                - listitem [ref=f11e110]:
+                  - link "December 2025" [ref=f11e111] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/2025/12/
+            - generic [ref=f11e113]:
+              - heading "Categories" [level=2] [ref=f11e114]
+              - list [ref=f11e115]:
+                - listitem [ref=f11e116]:
+                  - link "Productivity" [ref=f11e117] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/category/productivity/
+                - listitem [ref=f11e118]:
+                  - link "Uncategorized" [ref=f11e119] [cursor=pointer]:
+                    - /url: https://dev-blog.nemesisnet.co.za/category/uncategorized/
+    - contentinfo [ref=f11e120]:
+      - generic [ref=f11e122]:
+        - generic [ref=f11e123]: © October 2026
+        - text: "|"
+        - generic [ref=f11e124]:
+          - text: Built by
+          - link "NemesisGuy" [ref=f11e125] [cursor=pointer]:
+            - /url: https://github.com/NemesisGuy
+            - generic [aria-hidden] [ref=f11e126]: 
+            - text: NemesisGuy
+        - text: "|"
+        - generic [ref=f11e127]:
+          - text: Powered by
+          - link "NemesisNet.co.za" [ref=f11e128] [cursor=pointer]:
+            - /url: https://nemesisnet.co.za
+        - text: "| All rights reserved."
+  - text: 

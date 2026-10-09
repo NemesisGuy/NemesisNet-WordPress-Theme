@@ -79,6 +79,9 @@ This theme includes several templates for Pages and Posts:
 ### Analytics
 Go to **Analytics** in the admin menu to add your Umami tracking code.
 
+### AI / LLM
+The theme serves `llms.txt` automatically at `yoursite.com/llms.txt`. Tune it under the **LLM / llms.txt** theme page (enable toggle, summary, post count, pages, extra Markdown). No plugin required.
+
 ## Customization
 
 ### Theme Options

@@ -2,6 +2,13 @@
 
 ## 2.1.0 — 2026-10-09
 
+### Added
+- **llms.txt generator + GUI**: WordPress (incl. 7.x) has no core llms.txt
+  support, so the theme serves a virtual `/llms.txt` (Markdown, site title
+  + summary + recent posts + pages + optional custom section, 12h cache).
+  Configure at Appearance → Themes → "LLM / llms.txt" (enable toggle,
+  summary, max posts, pages toggle, extra Markdown). No plugin needed.
+
 First release from the `v2.1` branch (unpublished dev builds 2.1.1–2.1.6
 folded in). Upgrades cleanly from prod 2.0.3.
 

@@ -211,6 +211,11 @@ require get_template_directory() . '/inc/references-meta.php';
 require get_template_directory() . '/inc/blocks.php';
 
 /**
+ * llms.txt generator and LLM settings page.
+ */
+require get_template_directory() . '/inc/llms.php';
+
+/**
  * Custom comment walker for styled comment list.
  */
 if ( ! class_exists( 'NemesisNet_Comment_Walker' ) ) :
