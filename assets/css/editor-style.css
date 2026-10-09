@@ -60,3 +60,41 @@ a {
     border-radius: 12px;
     padding: var(--space-lg);
 }
+
+/* v2.1 (T3): front-end post-kit parity so authors see what readers see */
+.post-section,
+.post-cta,
+.tldr-box,
+.lesson-card,
+.code-explain {
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post-section { background: var(--glass-bg); border: 1px solid var(--glass-border); }
+.post-cta { background: rgba(0, 194, 168, 0.12); border: 1px solid rgba(0, 194, 168, 0.35); }
+.tldr-box { background: rgba(41, 121, 255, 0.14); border: 1px solid rgba(41, 121, 255, 0.35); }
+.lesson-card { background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); }
+.code-explain { background: rgba(0, 0, 0, 0.4); color: #e8ecf4; font-family: 'Fira Code', monospace; font-size: 0.9rem; }
+p.lead, .context-line { color: rgba(224, 230, 237, 0.75); }
+p.lead { font-size: 1.2rem; }
+.context-line { font-size: 0.95rem; }
+.related-reading ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.related-reading li { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 12px 16px; }
+.card-title { font-size: 1.25rem; font-weight: 600; margin: 0 0 12px 0; color: #fff; }
+.card-content { color: rgba(224, 230, 237, 0.75); line-height: 1.6; }
+
+.editor-styles-wrapper pre {
+    background: rgba(10, 14, 39, 0.6);
+    color: #e8ecf4;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.editor-styles-wrapper table th { background: rgba(15, 76, 129, 0.25); }
+.editor-styles-wrapper table tbody tr:nth-child(odd) { background: var(--glass-bg); }
+.editor-styles-wrapper .btn-aurora,
+.editor-styles-wrapper .btn-ghost { display: inline-flex; align-items: center; height: 48px; padding: 0 26px; border-radius: 12px; font-weight: 600; }
