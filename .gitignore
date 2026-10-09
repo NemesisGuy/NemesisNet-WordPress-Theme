@@ -25,3 +25,6 @@ package-lock.json
 
 # Zip files (we'll create these as needed)
 *.zip
+
+# Playwright MCP debris
+.playwright-mcp/
