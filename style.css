@@ -4,7 +4,7 @@ Theme URI: https://nemesisnet.co.za
 Author: NemesisNet Team
 Author URI: https://nemesisnet.co.za
 Description: A custom WordPress theme based on the NemesisNet Brand Guide.
-Version: 2.1.0.1
+Version: 2.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: nemesisnet
@@ -3114,6 +3114,38 @@ html[data-theme="light"] .code-explain {
 
 .table-compare td:first-child {
     font-weight: 600;
+}
+
+/* ============================================================
+ * v2.1.1 — Tech stack pills (native replacement for per-post
+ * hand-rolled span stacks). Stable public API: tech-stack,
+ * tech-pill.
+ * ============================================================ */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.tech-pill {
+    display: inline-block;
+    background: rgba(0, 200, 150, 0.15);
+    color: #00c896;
+    border: 1px solid rgba(0, 200, 150, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+html[data-theme="light"] .tech-pill {
+    background: rgba(0, 139, 106, 0.1);
+    border-color: rgba(0, 139, 106, 0.35);
+    color: #008B6A;
 }
 
 /* ============================================================

@@ -1,5 +1,28 @@
 # NemesisNet Theme Changelog
 
+## 2.1.1 — 2026-10-09
+
+### Fixed
+- **Lightbox never fired on single posts**: the click delegation only matched
+  `.entry-content img`, but single posts render content in `.post-content`
+  (pages/excerpts use `.entry-content`). Now matches
+  `.entry-content, .post-content, .page-content`. This was the entire reason
+  "click image does nothing" survived 2.1.0 — the script was enqueued and the
+  dialog existed, the selector just never matched.
+- **Read More vertical alignment** (2.1.0.x): `margin-top: 15px` scoped to
+  `.entry-footer .read-more` so the button sits level in flex button rows.
+
+### Added
+- **Tech stack pills**: native `.tech-stack` + `.tech-pill` (per-mode green,
+  light mode uses deep `#008B6A` for contrast) and the
+  `nemesisnet/tech-stack` pattern. Replaces the hand-rolled span stacks.
+- **Centered learn grid**: the `features-grid` / `feature-item` /
+  `feature-icon` / `feature-title` / `feature-description` set (icon on top,
+  centered — the theme-demo "Features" look) is confirmed as the documented
+  choice for What You'll Learn, with new pattern
+  `nemesisnet/learn-grid-centered`. The icon-left `features-list` variant and
+  its pattern stay for in-flow lists.
+
 ## 2.1.0 — 2026-10-09 (includes merged pre-existing work, repaired)
 
 ### Merged from pre-existing uncommitted work (all valid, kept)

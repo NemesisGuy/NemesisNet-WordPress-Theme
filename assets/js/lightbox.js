@@ -47,7 +47,9 @@
         document.addEventListener('click', function (e) {
             var target = e.target;
             if (target && target.tagName === 'IMG') {
-                var inContent = target.closest && target.closest('.entry-content');
+                // Content containers: single posts use .post-content,
+                // pages/excerpts use .entry-content (v2.1.1: was entry-only).
+                var inContent = target.closest && target.closest('.entry-content, .post-content, .page-content');
                 // Skip images already linked or inside the lightbox itself.
                 if (inContent && !target.closest('a') && !target.closest('dialog')) {
                     e.preventDefault();

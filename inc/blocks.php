@@ -105,5 +105,25 @@ function nemesisnet_register_block_patterns() {
             'content'     => '<div class="wp-block-group code-explain">Line-by-line: what the snippet above does and why each part matters.</div>',
         )
     );
+
+    register_block_pattern(
+        'nemesisnet/tech-stack',
+        array(
+            'title'       => __( 'Tech Stack Pills', 'nemesisnet' ),
+            'categories'  => array( 'nemesisnet' ),
+            'description' => __( 'Wrapping row of technology pills for the post meta area.', 'nemesisnet' ),
+            'content'     => '<div class="wp-block-group tech-stack"><span class="tech-pill">Spring Boot 3</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Hibernate</span><span class="tech-pill">OAuth2</span><span class="tech-pill">Redis</span></div>',
+        )
+    );
+
+    register_block_pattern(
+        'nemesisnet/learn-grid-centered',
+        array(
+            'title'       => __( 'Learn Grid (Centered Cards)', 'nemesisnet' ),
+            'categories'  => array( 'nemesisnet' ),
+            'description' => __( 'Centered icon-on-top cards, matching the theme demo Features section.', 'nemesisnet' ),
+            'content'     => '<div class="wp-block-group"><h3>What You Will Learn</h3><div class="wp-block-group features-grid"><div class="wp-block-group feature-item"><div class="feature-icon">📘</div><h4 class="feature-title">Concept one</h4><p class="feature-description">One-line explanation.</p></div><div class="wp-block-group feature-item"><div class="feature-icon">🛠️</div><h4 class="feature-title">Concept two</h4><p class="feature-description">One-line explanation.</p></div><div class="wp-block-group feature-item"><div class="feature-icon">🚀</div><h4 class="feature-title">Concept three</h4><p class="feature-description">One-line explanation.</p></div></div></div>',
+        )
+    );
 }
 add_action( 'init', 'nemesisnet_register_block_patterns' );
