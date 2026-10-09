@@ -13,7 +13,16 @@ A custom WordPress theme based on the NemesisNet Brand Guide, featuring a modern
 - ⚡ **Performance Optimized**: Lightweight and fast-loading
 - 🌓 **Theme Toggle**: Switch between dark and light modes
 - 🧩 **Reusable Components**: Includes cards, buttons, hero links, and more
+- 📑 **References Component**: Styled list for sources and citations
+- 🔍 **Nav Search**: Integrated header search toggle with glass styling
+- 🍞 **Breadcrumbs**: Navigation trail for better UX
 - 📄 **Demo Page Template**: Full component showcase page template (`page-demo.php`)
+
+## Glass Layout Rule-of-Thumb
+
+- Use `glass-section` for prose blocks (paragraphs, quotes, headings) and feel free to keep multiple related paragraphs inside one section for flow.
+- When the next block is a list/table/grid, close the `glass-section`, add a sibling `glass-card` for that structured content, then open a new section for the following prose if needed.
+- Never wrap a `glass-card` inside a `glass-section`; instead stack them sequentially (section → card → section, etc.).
 
 ## Installation
 
@@ -34,12 +43,24 @@ git clone https://github.com/NemesisGuy/NemesisNet-WordPress-Theme.git nemesisne
 
 Then activate the theme from WordPress Admin.
 
+## 🐛 Recently Fixed (v2.0.8)
+
+- **Nav Search**: header search toggle now opens/closes the search form (Esc closes).
+- **Breadcrumbs**: now render on posts, pages, archives, and search (toggle in Customizer → Layout).
+- **Pagination**: numbered pagination renders on the blog feed when more than one page exists (toggle in Customizer → Layout).
+
 ## Configuration
 
 ### Customizer
-Go to **Appearance > Customize** to configure all theme settings:
+Go to **Appearance > Customize > NemesisNet Settings** to configure all theme settings:
 - **General**: Accent Color, Default Theme Mode.
-- **Layout**: Global Sidebar Position, Sidebar Title, Sticky Header.
+- **Layout**: 
+    - Global Sidebar Position & Title
+    - Sticky Header
+    - **Show Breadcrumbs** (New)
+    - **Show Pagination** (New)
+    - **Show Search in Nav** (New)
+    - Author Bio Toggle
 - **UI Aesthetics**: Glass Blur, Border Radius.
 - **Miscellaneous**: Rickroll URL.
 
@@ -52,10 +73,31 @@ This theme includes several templates for Pages and Posts:
 ### Features
 - **Back to Top**: Automatically appears when scrolling down.
 - **Reading Time**: Displayed on single posts.
+- **References**: Add sources via the "Sources & References" meta box on posts.
 - **Editor Styles**: Gutenberg editor matches the frontend design.
 
 ### Analytics
 Go to **Analytics** in the admin menu to add your Umami tracking code.
+
+### AI / LLM
+The theme serves `llms.txt` automatically at `yoursite.com/llms.txt`. Tune it under the **LLM / llms.txt** theme page (enable toggle, summary, post count, pages, extra Markdown). No plugin required.
+
+Test it: open `/llms.txt` → title, summary, recent posts, pages all listed → save a post → reload `/llms.txt` → list updates (12h cache, busted on save). Toggle off → `/llms.txt` returns 404. If it 404s while enabled, re-save **Settings → Permalinks** once (rewrite flush).
+
+## Release Testing Checklist
+
+Run this on a staging/dev copy before every merge + release:
+
+- [ ] Upload the release zip, activate, hard-refresh (Ctrl+Shift+R).
+- [ ] **Purge every cache**: caching plugin (if any) **and** Cloudflare (Caching → Purge Everything, or Purge by URL for `style.css`). Stale edge cache is the #1 cause of "my fix isn't live" — verify with `curl -sI` or DevTools: `cf-cache-status` should be MISS/EXPIRED on first hit, and the served CSS must contain the new rules.
+- [ ] Confirm `style.css?ver=X` matches the release version in DevTools → Sources.
+- [ ] One table-heavy post in **dark + light** mode, desktop + ~390px width (headers distinct, stripes or `table-plain`, swipe-scroll works).
+- [ ] Code block readable in both modes; TL;DR + lesson cards readable in both modes.
+- [ ] Click a post image → lightbox opens, Esc/backdrop closes.
+- [ ] Learn grid: 4-across desktop, tight icon→title gap, icon colors render.
+- [ ] `/llms.txt` serves and updates (see above).
+- [ ] Editor shows styled cards/patterns, not grey boxes.
+- [ ] Console: zero errors; no 404s for theme assets.
 
 ## Customization
 
@@ -84,13 +126,14 @@ The theme uses CSS custom properties for easy customization:
 - **Buttons**: Primary, ghost, and Aurora-themed buttons.
 - **Hero Links**: Styled navigation links for CTAs.
 - **Pills & Tags**: Rounded elements for categories and highlights.
+- **Breadcrumbs & Pagination**: Consistent across posts, pages, archives, and search.
 - **Carousel**: Interactive image/content slider.
 - **Stats Grid**: Animated statistic counters.
 - **Feature Blocks**: Icon-based feature highlights.
 - **Related Posts**: Grid layout for suggested content.
 - **Author Bio**: Stylish author information box.
+- **References List**: Styled component for external links.
 - **Comments**: Custom-styled comment list and form.
-- **Navigation**: Breadcrumbs, Pagination, and Post Navigation.
 - **Navigation**: Breadcrumbs, Pagination, and Post Navigation.
 - **Footer**: Dynamic footer with year and attribution.
 
@@ -111,6 +154,9 @@ Check `components-demo.php` for a static HTML reference, or use the **"Demo Page
 
 ## Version History
 
+- **2.1.0** - Post kit (native post classes + 8 block patterns), light/dark correctness fixes (code blocks, tables, glass, accent picker), image lightbox, tech-stack pills, compact learn grid, editor parity, Prism removal, Glass Intensity slider, html5/responsive-embeds, docs + repo cleanup.
+- **2.0.8** - Header search toggle, breadcrumbs/pagination QA, new Gutenberg patterns (Hero, Project Card), mobile nav JS hardening
+- **2.0.1** - Added References component, Breadcrumbs, Nav Search, Pagination toggles, and fixed archive/search layouts.
 - **2.0.0** - Major update: Customizer support, new templates (Sidebar Left/Right), Gutenberg editor styles, reading time, back-to-top button, and sticky header.
 - **1.9.1** - Fixed sidebar layout issues and added global position setting.
 - **1.9.0** - Added Demo Page template, improved post navigation, and refined responsive layouts
@@ -119,7 +165,18 @@ Check `components-demo.php` for a static HTML reference, or use the **"Demo Page
 - **1.6.0** - Enhanced responsive image handling
 - **1.5.0** - Initial release with core features
 
+## Documentation
+
+- **[Post Kit Guide](docs/post-kit.md)**: How to write posts with native classes and patterns — no custom CSS. Start here.
+- **[LLM Cheatsheet](docs/llm-cheatsheet.md)**: A quick reference for LLMs to generate theme-compliant HTML.
+- **[Development Notes](docs/dev-notes.md)**: Technical details and development logs.
+- **[Project Plan](docs/plan.md)**: Roadmap and task tracking.
+
 ## Support
+
+- **Website**: [nemesisnet.co.za](https://nemesisnet.co.za)
+- **Author**: [NemesisGuy on GitHub](https://github.com/NemesisGuy) — [LinkedIn](https://www.linkedin.com/in/peter-buckingham-65438757)
+- **Issues**: please use the [GitHub repository](https://github.com/NemesisGuy/NemesisNet-WordPress-Theme) issue tracker.
 
 For issues or questions, please visit the [GitHub repository](https://github.com/NemesisGuy/NemesisNet-WordPress-Theme).
 

@@ -11,6 +11,12 @@ if ( ! function_exists( 'nemesisnet_setup' ) ) :
         // Let WordPress manage the document title.
         add_theme_support( 'title-tag' );
 
+        // HTML5 markup for core components (search form, comments, galleries).
+        add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
+
+        // Responsive embedded content.
+        add_theme_support( 'responsive-embeds' );
+
         // Enable support for Post Thumbnails on posts and pages.
         add_theme_support( 'post-thumbnails' );
 
@@ -61,17 +67,11 @@ function nemesisnet_scripts() {
     // Font Awesome.
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
 
-    // Prism.js CSS.
-    wp_enqueue_style( 'prismjs-style', 'https://cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css', array(), '1.29.0' );
-
     // Theme JavaScript.
     wp_enqueue_script( 'nemesisnet-theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), wp_get_theme()->get( 'Version' ), true );
 
-    // Prism.js core.
-    wp_enqueue_script( 'prismjs-core', 'https://cdn.jsdelivr.net/npm/prismjs/prism.min.js', array(), '1.29.0', true );
-
-    // Prism.js autoloader.
-    wp_enqueue_script( 'prismjs-autoloader', 'https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js', array( 'prismjs-core' ), '1.29.0', true );
+    // Image lightbox (v2.1, F6): native <dialog> enlargement for .entry-content images.
+    wp_enqueue_script( 'nemesisnet-lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'nemesisnet_scripts' );
 
@@ -145,25 +145,34 @@ function nemesisnet_output_analytics() {
 add_action( 'wp_head', 'nemesisnet_output_analytics' );
 
 /**
- * Customizer settings.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Output Theme Options as CSS variables and set initial theme mode.
+ * Output Theme Options CSS.
  */
 function nemesisnet_output_theme_options_css() {
-    // Use get_theme_mod for Customizer settings, falling back to get_option for migration/defaults
-    $accent_color = get_theme_mod( 'nemesisnet_accent_color', get_option( 'nemesisnet_accent_color', '#1E88E5' ) );
-    $glass_blur   = get_theme_mod( 'nemesisnet_glass_blur', get_option( 'nemesisnet_glass_blur', 12 ) );
-    $border_radius= get_theme_mod( 'nemesisnet_border_radius', get_option( 'nemesisnet_border_radius', 12 ) );
-    
+    $accent_color = get_theme_mod( 'nemesisnet_accent_color', '#1E88E5' );
+    $glass_blur = get_theme_mod( 'nemesisnet_glass_blur', 12 );
+    $border_radius = get_theme_mod( 'nemesisnet_border_radius', 12 );
+    $glass_intensity = get_theme_mod( 'nemesisnet_glass_intensity', 'standard' );
+
+    // v2.1 (F3/T7): glass intensity presets map to the proven per-post alphas.
+    $glass_map = array(
+        'subtle'   => array( 'dark' => '0.05', 'light' => '0.4' ),
+        'standard' => array( 'dark' => '0.08', 'light' => '0.6' ),
+        'strong'   => array( 'dark' => '0.12', 'light' => '0.75' ),
+    );
+    if ( ! isset( $glass_map[ $glass_intensity ] ) ) {
+        $glass_intensity = 'standard';
+    }
+    $glass_dark  = $glass_map[ $glass_intensity ]['dark'];
+    $glass_light = $glass_map[ $glass_intensity ]['light'];
+
     echo '<style type="text/css">';
     echo ':root {';
-    echo '--theme-accent-color: ' . esc_attr( $accent_color ) . ';';
+    echo '--accent-color: ' . esc_attr( $accent_color ) . ';';
     echo '--theme-glass-blur: ' . absint( $glass_blur ) . 'px;';
     echo '--theme-border-radius: ' . absint( $border_radius ) . 'px;';
+    echo '--glass-bg: rgba(255, 255, 255, ' . esc_attr( $glass_dark ) . ');';
     echo '}';
+    echo 'html[data-theme="light"] { --glass-bg: rgba(255, 255, 255, ' . esc_attr( $glass_light ) . '); }';
     // Apply border radius to various elements.
     echo '.custom-logo-link, .mobile-menu-toggle, .mobile-nav-close, .theme-toggle, .btn-primary, .btn-ghost, .btn-aurora, .read-more, input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="url"], input[type="tel"], input[type="number"], textarea, select, .alert, .post, .project-card, .glass-card, .color-card, .author-bio, .related-post-card, .feature-item, .feature-list-item, .feature-list-icon, .stat-item, table, .wp-block-embed iframe, .wp-block-embed video, .wp-block-embed audio, .wp-block-cover, .wp-block-image img, .carousel, .carousel-slide { border-radius: var(--theme-border-radius); }';
     // Glass blur for backdrop-filter.
@@ -189,6 +198,22 @@ function nemesisnet_set_initial_data_theme( $output ) {
     return $output;
 }
 add_filter( 'language_attributes', 'nemesisnet_set_initial_data_theme' );
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * References Meta Box.
+ */
+require get_template_directory() . '/inc/references-meta.php';
+require get_template_directory() . '/inc/blocks.php';
+
+/**
+ * llms.txt generator and LLM settings page.
+ */
+require get_template_directory() . '/inc/llms.php';
 
 /**
  * Custom comment walker for styled comment list.
@@ -259,6 +284,17 @@ function nemesisnet_sidebar_body_class( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'nemesisnet_sidebar_body_class' );
+
+/**
+ * Add custom user contact methods.
+ */
+function nemesisnet_user_contact_methods( $methods ) {
+    $methods['linkedin'] = __( 'LinkedIn', 'nemesisnet' );
+    $methods['twitter']  = __( 'Twitter / X', 'nemesisnet' );
+    $methods['github']   = __( 'GitHub', 'nemesisnet' );
+    return $methods;
+}
+add_filter( 'user_contactmethods', 'nemesisnet_user_contact_methods' );
 
 /**
  * Calculate Reading Time

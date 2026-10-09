@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post glass-section'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
 	<header class="post-header">
 		<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 
@@ -36,6 +36,16 @@
 		);
 		?>
 	</div><!-- .post-content -->
+
+    <?php
+    // References Section
+    get_template_part( 'template-parts/references' );
+
+    // Author Bio
+    if ( get_theme_mod( 'nemesisnet_show_author_bio', true ) ) {
+        get_template_part( 'template-parts/author-bio' );
+    }
+    ?>
 
 	<footer class="entry-footer">
         <div class="entry-taxonomies">

@@ -95,6 +95,54 @@ function nemesisnet_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) );
 
+    // Setting: Show Author Bio
+    $wp_customize->add_setting( 'nemesisnet_show_author_bio', array(
+        'default'           => true,
+        'sanitize_callback' => 'nemesisnet_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'nemesisnet_show_author_bio', array(
+        'label'    => __( 'Show Author Bio', 'nemesisnet' ),
+        'section'  => 'nemesisnet_layout_section',
+        'type'     => 'checkbox',
+    ) );
+
+    // Setting: Show Breadcrumbs
+    $wp_customize->add_setting( 'nemesisnet_show_breadcrumbs', array(
+        'default'           => true,
+        'sanitize_callback' => 'nemesisnet_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'nemesisnet_show_breadcrumbs', array(
+        'label'    => __( 'Show Breadcrumbs', 'nemesisnet' ),
+        'section'  => 'nemesisnet_layout_section',
+        'type'     => 'checkbox',
+    ) );
+
+    // Setting: Show Pagination
+    $wp_customize->add_setting( 'nemesisnet_show_pagination', array(
+        'default'           => true,
+        'sanitize_callback' => 'nemesisnet_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'nemesisnet_show_pagination', array(
+        'label'    => __( 'Show Pagination', 'nemesisnet' ),
+        'section'  => 'nemesisnet_layout_section',
+        'type'     => 'checkbox',
+    ) );
+
+    // Setting: Show Nav Search
+    $wp_customize->add_setting( 'nemesisnet_show_nav_search', array(
+        'default'           => false,
+        'sanitize_callback' => 'nemesisnet_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'nemesisnet_show_nav_search', array(
+        'label'    => __( 'Show Search in Nav', 'nemesisnet' ),
+        'section'  => 'nemesisnet_layout_section',
+        'type'     => 'checkbox',
+    ) );
+
     // Section: UI Aesthetics
     $wp_customize->add_section( 'nemesisnet_ui_section', array(
         'title'    => __( 'UI Aesthetics', 'nemesisnet' ),
@@ -131,6 +179,24 @@ function nemesisnet_customize_register( $wp_customize ) {
         'input_attrs' => array(
             'min' => 0,
             'max' => 30,
+        ),
+    ) );
+
+    // Setting: Glass Intensity (v2.1, T7) — maps to proven F3 alphas.
+    $wp_customize->add_setting( 'nemesisnet_glass_intensity', array(
+        'default'           => 'standard',
+        'sanitize_callback' => 'nemesisnet_sanitize_select',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'nemesisnet_glass_intensity', array(
+        'label'       => __( 'Glass Intensity', 'nemesisnet' ),
+        'description' => __( 'Controls card/section translucency in both modes.', 'nemesisnet' ),
+        'section'     => 'nemesisnet_ui_section',
+        'type'        => 'select',
+        'choices'     => array(
+            'subtle'   => __( 'Subtle', 'nemesisnet' ),
+            'standard' => __( 'Standard', 'nemesisnet' ),
+            'strong'   => __( 'Strong', 'nemesisnet' ),
         ),
     ) );
 

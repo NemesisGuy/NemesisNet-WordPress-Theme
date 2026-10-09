@@ -16,6 +16,7 @@ get_header();
                 $wrapper_class .= ' sidebar-left';
             }
             ?>
+            <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
             <div class="<?php echo esc_attr( $wrapper_class ); ?>">
                 <div class="primary-content">
                     <?php
@@ -41,7 +42,9 @@ get_header();
 
                         endwhile;
 
-                        get_template_part('template-parts/pagination');
+                        if ( get_theme_mod( 'nemesisnet_show_pagination', true ) ) :
+                            get_template_part('template-parts/pagination');
+                        endif;
 
                     else :
 

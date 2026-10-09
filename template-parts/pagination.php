@@ -3,15 +3,15 @@
  * Template part for displaying post pagination.
  */
 
-// If there are no posts, don't display pagination.
-if ( ! have_posts() ) {
-    return;
-}
+global $wp_query;
 
-// Display posts navigation.
-the_posts_navigation(
-    array(
-        'prev_text' => '<span class="nav-label"><i class="fas fa-arrow-left"></i> ' . esc_html__( 'Previous', 'nemesisnet' ) . '</span> <span class="nav-title">%title</span>',
-        'next_text' => '<span class="nav-label">' . esc_html__( 'Next', 'nemesisnet' ) . ' <i class="fas fa-arrow-right"></i></span> <span class="nav-title">%title</span>',
-    )
-);
+// Only render pagination when there is more than one page of results.
+if ( isset( $wp_query->max_num_pages ) && $wp_query->max_num_pages > 1 ) {
+    the_posts_pagination(
+        array(
+            'mid_size'  => 2,
+            'prev_text' => '<i class="fas fa-arrow-left"></i> <span class="screen-reader-text">' . __( 'Previous', 'nemesisnet' ) . '</span>',
+            'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'nemesisnet' ) . '</span> <i class="fas fa-arrow-right"></i>',
+        )
+    );
+}
