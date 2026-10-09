@@ -1,6 +1,6 @@
 # NemesisNet Theme Changelog
 
-## Unreleased (version number TBD by maintainer)
+## 2.1.5 — 2026-10-09 (bug-fix build; release version TBD at master merge)
 
 ### Fixed
 - **Learn-grid gap, real root cause**: a duplicate legacy "Features
