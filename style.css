@@ -4,7 +4,7 @@ Theme URI: https://nemesisnet.co.za
 Author: NemesisNet Team
 Author URI: https://nemesisnet.co.za
 Description: A custom WordPress theme based on the NemesisNet Brand Guide.
-Version: 2.1.1
+Version: 2.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: nemesisnet
@@ -912,21 +912,48 @@ table td {
 }
 
 table th {
-    background: rgba(var(--nemesis-blue-deep-rgb), 0.1);
-    /* Slightly darker glass for header */
+    background: rgba(var(--nemesis-blue-deep-rgb), 0.35);
+    /* Distinct navy header in dark mode */
     font-weight: 600;
     color: var(--text-color);
 }
 
+html[data-theme="light"] table th {
+    background: rgba(var(--nemesis-blue-deep-rgb), 0.12);
+    color: #0f4c81;
+}
+
 table tbody tr:nth-child(odd) {
     background: var(--glass-bg);
-    /* Striped rows — uses proven glass default directly (F2: rgba(var()) is invalid CSS) */
+    /* Striped rows (default) — uses proven glass default directly (F2: rgba(var()) is invalid CSS) */
+}
+
+/* Uniform-row variant: all rows the same, header still distinct.
+   Usage: <table class="table-plain"> */
+table.table-plain tbody tr:nth-child(odd) {
+    background: transparent;
 }
 
 table tbody tr:hover {
     background: rgba(30, 136, 229, 0.06);
     /* Fallback */
     background: color-mix(in srgb, var(--accent-color) 6%, transparent);
+}
+
+/* Bare tables scroll horizontally on small screens (v2.1.2) —
+   plain <table> has no .wp-block-table wrapper to do it. */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table th,
+    table td {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
 }
 
 /* WordPress Block Table */
@@ -1612,6 +1639,31 @@ html[data-theme="light"] .hero-background::before {
 .feature-description {
     color: var(--text-muted);
     line-height: 1.6;
+}
+
+/* Compact learn-grid variant for in-post use (v2.1.2): tighter cards that
+   fit 4 across at desktop widths instead of 3+1 orphan. Stable public API:
+   features-grid--compact. */
+.features-grid--compact {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.features-grid--compact .feature-item {
+    padding: var(--space-md);
+}
+
+.features-grid--compact .feature-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: var(--space-sm);
+}
+
+.features-grid--compact .feature-title {
+    font-size: 1.1rem;
 }
 
 /* Feature List */

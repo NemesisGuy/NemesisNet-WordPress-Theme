@@ -1,5 +1,25 @@
 # NemesisNet Theme Changelog
 
+## 2.1.2 — 2026-10-09
+
+### Fixed
+- **Bare tables on mobile**: plain `<table>` (no `.wp-block-table` wrapper)
+  overflowed the viewport with no scroll. Tables now become horizontally
+  scrollable under 768px with tighter cell padding. Everything stays
+  responsive — scroll, don't squeeze.
+- **Table header distinction**: dark header deepened to 0.35 deep-blue tint;
+  light mode gets its own rule (0.12 tint, `#0f4c81` text) instead of the
+  near-invisible shared 0.1.
+
+### Added
+- **Uniform-row table variant**: `table.table-plain` disables striping (all
+  rows the same, header still distinct). Default stays striped. Usage:
+  `<table class="table-plain">`.
+- **Compact learn grid**: `.features-grid--compact` (200px min columns,
+  48px icons, tighter padding) fits 4 cards across at post widths instead of
+  3+1 orphan. The `nemesisnet/learn-grid-centered` pattern now emits the
+  compact class; base `.features-grid` unchanged for the styleguide page.
+
 ## 2.1.1 — 2026-10-09
 
 ### Fixed

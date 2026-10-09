@@ -122,7 +122,7 @@ function nemesisnet_register_block_patterns() {
             'title'       => __( 'Learn Grid (Centered Cards)', 'nemesisnet' ),
             'categories'  => array( 'nemesisnet' ),
             'description' => __( 'Centered icon-on-top cards, matching the theme demo Features section.', 'nemesisnet' ),
-            'content'     => '<div class="wp-block-group"><h3>What You Will Learn</h3><div class="wp-block-group features-grid"><div class="wp-block-group feature-item"><div class="feature-icon">📘</div><h4 class="feature-title">Concept one</h4><p class="feature-description">One-line explanation.</p></div><div class="wp-block-group feature-item"><div class="feature-icon">🛠️</div><h4 class="feature-title">Concept two</h4><p class="feature-description">One-line explanation.</p></div><div class="wp-block-group feature-item"><div class="feature-icon">🚀</div><h4 class="feature-title">Concept three</h4><p class="feature-description">One-line explanation.</p></div></div></div>',
+            'content'     => '<div class="wp-block-group"><h3>What You Will Learn</h3><div class="wp-block-group features-grid features-grid--compact"><div class="wp-block-group feature-item"><div class="feature-icon">📘</div><h4 class="feature-title">Concept one</h4><p class="feature-description">One-line explanation.</p></div><div class="wp-block-group feature-item"><div class="feature-icon">🛠️</div><h4 class="feature-title">Concept two</h4><p class="feature-description">One-line explanation.</p></div><div class="wp-block-group feature-item"><div class="feature-icon">🚀</div><h4 class="feature-title">Concept three</h4><p class="feature-description">One-line explanation.</p></div></div></div>',
         )
     );
 }
